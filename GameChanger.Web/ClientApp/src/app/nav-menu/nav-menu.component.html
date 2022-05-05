@@ -1,0 +1,48 @@
+<header>
+
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/']">Team Stats</a>
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              aria-label="Toggle navigation"
+              [attr.aria-expanded]="isExpanded"
+              (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex" [ngClass]="{ show: isExpanded }">
+        <ul class="navbar-nav flex-grow">
+          <li class="nav-item">
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--<nav>
+    <div class="container">
+      <input type="text" name="search-box" (keyup)="sendData($event)" class="form-control" placeholder="Search for team..." aria-label="Search" aria-describedby="basic-addon2">
+      <section class="search-result" style="">
+        <ng-container *ngFor="let team of searchHits">
+
+          <div class="team" style="">
+            <a data-id="{{ team.id }}" href="/team/{{ team.id }}">
+              <p class="team_name">{{ team.name }}</p>
+              <p class="team_season">Season: {{ team.team_season.season }} {{ team.team_season.year }}</p>
+              <p class="team_location">Location: {{ team.location?.city }}, {{ team.location?.state }}</p>
+              <p>Admins: 
+                <ng-container *ngFor="let person of team.staff">
+                  <span class="staff_name">{{ person }} </span>
+                </ng-container>
+              </p>
+
+            </a>
+          </div>
+        </ng-container>
+      </section>
+    </div>
+  </nav>
+</header>-->
+

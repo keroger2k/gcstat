@@ -1,0 +1,29 @@
+::ng-deep .cdk-overlay-pane {
+  width: auto !important;
+}
+
+.mat-form-field {
+  width: 500px;
+}
+
+
+.mat-option.mat-focus-indicator.ng-star-inserted {
+  height: 125px;
+  line-height: normal;
+  margin: 0px;
+  border: solid 1px gray;
+}
+
+p.team_name {
+  color: rgb(23, 165, 237, 0.87);
+  margin-bottom: 5px;
+}
+p.team_season {
+  color: rgb(152, 157, 159, 0.87);
+  margin-bottom: 5px;
+  text-transform:capitalize;
+}
+p.team_location {
+  color: rgb(152, 157, 159, 0.87);
+  margin-bottom: 5px;
+}

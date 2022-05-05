@@ -1,0 +1,28 @@
+<div *ngIf="teamInfo">
+  <h1>
+    <a href="">
+      {{ teamInfo.name  }} 
+    </a>
+  </h1>
+  <h2 class="memberClass largeText">
+
+    <strong>{{ teamInfo.city }}, {{ teamInfo.state }}</strong> · Youth Baseball · <span style="text-transform:capitalize">{{ teamInfo.season_name }}</span> {{ teamInfo.season_year }}
+  </h2>
+  <img src="{{ avatar }}" alt="team_avatar" class="img-thumbnail" style="width: 200px; height: 200px;">
+</div>
+
+
+<mat-tab-group>
+  <mat-tab label="First">
+    <app-stats [team]="currentTeam" [players]="players" [info]="teamInfo"></app-stats>
+  </mat-tab>
+  <mat-tab label="Second">
+    <app-schedule [schedule]="schedule" [games]="games"></app-schedule>
+  </mat-tab>
+</mat-tab-group>
+
+
+
+
+
+

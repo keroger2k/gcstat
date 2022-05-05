@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameChanger.Core", "GameChanger.Core\GameChanger.Core.csproj", "{DCDFF5DE-53AC-4F28-8631-0D87E1606518}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameChanger.Web", "GameChanger.Web\GameChanger.Web.csproj", "{66C97D6B-2642-4196-87F9-A02E49D47D61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCDFF5DE-53AC-4F28-8631-0D87E1606518}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCDFF5DE-53AC-4F28-8631-0D87E1606518}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCDFF5DE-53AC-4F28-8631-0D87E1606518}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCDFF5DE-53AC-4F28-8631-0D87E1606518}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66C97D6B-2642-4196-87F9-A02E49D47D61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66C97D6B-2642-4196-87F9-A02E49D47D61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66C97D6B-2642-4196-87F9-A02E49D47D61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66C97D6B-2642-4196-87F9-A02E49D47D61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEC11FF3-EC82-46F9-B584-A9A86A3E5720}
+	EndGlobalSection
+EndGlobal

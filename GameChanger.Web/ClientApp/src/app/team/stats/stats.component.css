@@ -1,0 +1,202 @@
+
+.gcTable thead tr, .gcTable.withOutline {
+  border-bottom: 1px solid #ccc
+}
+
+.statTable {
+  width: 100%
+}
+
+  .statTable td {
+    vertical-align: middle
+  }
+
+  .statTable .numberCell {
+    text-align: right;
+    width: 15px
+  }
+
+  .statTable .againstCell, .statTable .nameCell {
+    text-align: left;
+    width: 80px
+  }
+
+  .statTable .paywallCell {
+    vertical-align: top
+  }
+
+  .statTable .dateCell {
+    text-align: left;
+    width: 75px
+  }
+
+  .statTable .gameResultCell {
+    width: 125px
+  }
+
+  .statTable .errorCell {
+    background: #ffe5e5
+  }
+
+    .statTable .errorCell input {
+      border: 1px solid #ff7f82
+    }
+
+  .statTable .pbpPaywallSmall {
+    min-width: 500px
+  }
+
+.teamStats .editStatsContainer {
+  vertical-align: bottom
+}
+
+.teamStats .gctoggle a {
+  display: inline-block
+}
+
+.teamStats .editorContainer input {
+  max-width: 3em
+}
+
+.detailStatValue {
+  color: #666
+}
+
+table.linescore {
+  margin-right: auto;
+  margin-left: auto;
+  table-layout: fixed
+}
+
+  table.linescore td, table.linescore th {
+    padding: .5em
+  }
+
+  table.linescore.extraWide td, table.linescore.extraWide th {
+    padding: .5em 1em
+  }
+
+  table.linescore th {
+    color: #999;
+    font-weight: 400
+  }
+
+    table.linescore th.totals {
+      font-weight: 700;
+      color: #666
+    }
+
+  table.linescore td {
+    border: thin solid #ddd;
+    font-weight: 700;
+    text-align: right
+  }
+
+    table.linescore td.firstChild, table.linescore td:first-child {
+      border-left: none;
+      text-align: left;
+      text-transform: uppercase
+    }
+
+.gcTable tfoot, .gcTable.withGridLines tbody td {
+  border-left: 1px solid #ccc
+}
+
+table.linescore td.firstChild, table.linescore td:first-child, table.linescore th.firstChild, table.linescore th:first-child {
+  padding-right: 1.5em
+}
+
+table.linescore .runs {
+  background-color: #eee
+}
+
+table.linescore .currentInning {
+  background-color: #9cf
+}
+
+table.linescore.gameOver .currentInning {
+  background-color: transparent
+}
+
+table.linescore .negativeScore {
+  color: red
+}
+
+.onDarkBackground table.linescore td, .onDarkBackground table.linescore th.totals {
+  color: #fff
+}
+
+.onDarkBackground table.linescore .runs {
+  background-color: #fff;
+  color: #000
+}
+
+.blueActionSkin, .blueActionSkin:hover, .blueActionSkin:visited, .headerActionSkin:visited, .popActionSkin, .popActionSkin:visited, .urgentPopActionSkin, .urgentPopActionSkin:visited {
+  color: #fff
+}
+
+.gcTable th {
+  text-align: left
+}
+
+.gcTable td, .gcTable th {
+  padding: 5px
+}
+
+.gcTable tfoot {
+  border-right: 1px solid #ccc
+}
+
+  .gcTable tfoot td, .gcTable th {
+    font-weight: 700;
+    background-color: #eee;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 2px solid #ccc
+  }
+
+.gcTable .header {
+  cursor: pointer
+}
+
+.gcTable .headerSortDown, .gcTable .headerSortUp {
+  background-color: #ddd;
+  border-top-color: #888
+}
+
+.gcTable.withGridLines tbody tr {
+  border-top: 1px solid #ccc
+}
+
+  .gcTable.withGridLines tbody tr:first-child {
+    border-top: none
+  }
+
+.gcTable.withGridLines tbody td:first-child {
+  border-left: none
+}
+
+.gcTable.withHorizontalLines tbody tr {
+  border-top: 1px solid #ccc
+}
+
+  .gcTable.withHorizontalLines tbody tr:first-child {
+    border-top: none
+  }
+
+.gcTable.withHorizontalLines.withoutHeader tbody tr:first-child {
+  border-top: 1px solid #ccc
+}
+
+.gcTable.withOutline tbody tr {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc
+}
+
+.gcTable.withHoverHighlighting tbody > tr:hover {
+  background-color: #9cf
+}
+
+.gcTable .tablesorterInfo {
+  display: none
+}
