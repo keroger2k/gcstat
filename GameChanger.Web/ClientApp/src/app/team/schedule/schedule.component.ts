@@ -14,12 +14,23 @@ export class ScheduleComponent {
 
   @Input() schedule: any;
   @Input() games: any;
-  constructor() {  }
+  constructor() { }
+
+  getResult(teamScore: number, oppScore: number) {
+    if (teamScore > oppScore) {
+      return "W";
+    } else if (teamScore < oppScore) {
+      return "L";
+    }
+    else {
+      return "T";
+    }
+  }
 
   getGameInfo(item: TeamScheduledEvent) {
     var game = this.games.find((c: { event_id: string; }) => c.event_id == item.event.id);
     if (game && game.game_data) {
-        return game;
+      return game;
     }
   }
 }

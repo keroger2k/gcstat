@@ -7,11 +7,7 @@ const PROXY_CONFIG = [
   {
     context: [
       "/api/search",
-      "/api/teamstats",
-      "/api/teamavatar",
       "/api/team",
-      "/api/teamscheduledevent",
-      "/api/teamgamedata"
     ],
     target: target,
     secure: false,

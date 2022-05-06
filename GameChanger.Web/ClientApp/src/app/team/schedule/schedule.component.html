@@ -1,7 +1,7 @@
 <ul>
   <ng-container *ngFor="let item of schedule">
     <li *ngIf="getGameInfo(item)">
-      <span style="padding:0px 5px 0px 5px; font-weight:bold;">{{ getGameInfo(item).game_data.opponent_score > getGameInfo(item).game_data.team_score ? "L" : "W" }}</span>
+      <span style="padding:0px 5px 0px 5px; font-weight:bold;">{{  getResult(getGameInfo(item).game_data.team_score, getGameInfo(item).game_data.opponent_score) }}</span>
       <span style="padding:0px 5px 0px 5px;">{{ getGameInfo(item).game_data.opponent_score }} - {{ getGameInfo(item).game_data.team_score }}</span>
       <span style="padding:0px 5px 0px 5px;">{{ item.event.title }}</span>
     </li>

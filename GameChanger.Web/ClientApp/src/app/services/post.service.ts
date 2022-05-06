@@ -13,6 +13,8 @@ import { map } from 'rxjs/operators';
 
 export class PostService {
 
+  TEAM_ENDPOINT = '/api/team/';
+
   constructor(private http: HttpClient) { }
 
   searchTeams(query: string) {
@@ -20,23 +22,23 @@ export class PostService {
   }
 
   teamStats(id: string) {
-    return this.http.get<Root>('/api/teamstats/' + id)
+    return this.http.get<Root>(this.TEAM_ENDPOINT + id + '/season-stats')
   }
 
   teamAvatar(id: string) {
-    return this.http.get<Avatar>('/api/teamavatar/' + id)
+    return this.http.get<Avatar>(this.TEAM_ENDPOINT + id + '/avatar')
   }
 
   teamGameData(id: string) {
-    return this.http.get<Array<TeamGameData>>('/api/teamgamedata/' + id)
+    return this.http.get<Array<TeamGameData>>(this.TEAM_ENDPOINT + id + '/gamedata')
   }
 
   teamScheduledEvent(id: string) {
-    return this.http.get<Array<TeamScheduledEvent>>('/api/teamscheduledevent/' + id)
+    return this.http.get<Array<TeamScheduledEvent>>(this.TEAM_ENDPOINT + id + '/schedule')
   }
 
   teamInfo(id: string) {
-    return this.http.get<TeamInfo>('/api/team/' + id)
+    return this.http.get<TeamInfo>(this.TEAM_ENDPOINT + id)
   }
 
 }
