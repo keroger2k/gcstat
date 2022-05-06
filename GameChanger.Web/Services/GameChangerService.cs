@@ -14,6 +14,7 @@ namespace GameChanger.Core
         //# GC API Endpoints
         private readonly string TEAM_SEASON_STATS = "/teams/{0}/season-stats";
         private readonly string TEAM_GAME_DATA = "/teams/{0}/schedule/batch-simple-scorekeeping-data/";
+        private readonly string TEAM_GAME_STATS = "/teams/{0}/schedule/events/{1}/player-stats";
         private readonly string TEAM_INFO = "/teams/{0}";
         private readonly string TEAM_AVATAR = "/teams/{0}/avatar-image";
         private readonly string TEAM_PLAYERS = "/teams/{0}/players";
@@ -63,6 +64,12 @@ namespace GameChanger.Core
         {
             var url = string.Format(TEAM_INFO, teamId);
             var result = JsonSerializer.Deserialize<Team>(await GetRequestAsync(url));
+            return result;
+        }
+        public async Task<TeamEventStats> GetTeamEventStatsAsync(string teamId, string eventId)
+        {
+            var url = string.Format(TEAM_GAME_STATS, teamId, eventId);
+            var result = JsonSerializer.Deserialize<TeamEventStats>(await GetRequestAsync(url));
             return result;
         }
 

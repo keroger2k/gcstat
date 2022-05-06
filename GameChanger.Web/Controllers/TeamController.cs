@@ -20,6 +20,14 @@ namespace GameChanger.Web.Controllers
         }
 
         [HttpGet]
+        [Route("{id}/schedule/events/{eid}/player-stats")]
+        public async Task<ActionResult<Team>> GetTeamEventPlayerStats(string id, string eid)
+        {
+            var teamStats = await _gameChangerService.GetTeamEventStatsAsync(id, eid);
+            return Ok(teamStats);
+        }
+
+        [HttpGet]
         [Route("{id}/avatar")]
         public async Task<ActionResult<TeamAvatar>> GetTeamAvatar(string id)
         {
