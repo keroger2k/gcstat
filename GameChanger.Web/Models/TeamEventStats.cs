@@ -312,6 +312,8 @@ namespace GameChanger.Core
         public double _1ST2OUTPercent { get; set; }
         public int _2STRIKES { get; set; }
         public int LBFPN { get; set; }
+        public Dictionary<string, NotSure> players { get; set; }
+
     }
 
     public class General
@@ -321,6 +323,7 @@ namespace GameChanger.Core
 
     public class Offense
     {
+        public Dictionary<string, NotSure> players { get; set; }
         public int H { get; set; }
         public int R { get; set; }
         public int _1B { get; set; }
@@ -465,13 +468,6 @@ namespace GameChanger.Core
         public int _2STRIKES { get; set; }
         public int _3OUTLOB { get; set; }
 
-        [JsonPropertyName("0ca4e1c0-b385-45ff-8539-b6faadf3f487")]
-        public List<_0ca4e1c0B38545ff8539B6faadf3f487> _0ca4e1c0B38545ff8539B6faadf3f487 { get; set; }
-
-        [JsonPropertyName("128091d3-fce0-444d-ba4d-d763ca69fba0")]
-        public List<_128091d3Fce0444dBa4dD763ca69fba0> _128091d3Fce0444dBa4dD763ca69fba0 { get; set; }
-
-       
     }
 
     public class Stats
@@ -481,9 +477,8 @@ namespace GameChanger.Core
         public Offense offense { get; set; }
     }
 
-    public class _0ca4e1c0B38545ff8539B6faadf3f487
+    public class NotSure
     {
-        public Stats stats { get; set; }
         public string id { get; set; }
         public string code { get; set; }
         public object createdAt { get; set; }
@@ -491,15 +486,6 @@ namespace GameChanger.Core
         public CompactorAttributes compactorAttributes { get; set; }
     }
 
-    public class _128091d3Fce0444dBa4dD763ca69fba0
-    {
-        public Stats stats { get; set; }
-        public string id { get; set; }
-        public string code { get; set; }
-        public long createdAt { get; set; }
-        public Attributes attributes { get; set; }
-        public CompactorAttributes compactorAttributes { get; set; }
-    }
     public class Something1
     {
         public PlayerStats stats { get; set; }
@@ -539,10 +525,12 @@ namespace GameChanger.Core
         public string stream { get; set; }
     }
 
+
     public class SprayChartData
     {
-        public Defense defense { get; set; }
-        public Offense offense { get; set; }
+        public Dictionary<string, List<NotSure>> defense { get; set; }
+        public Dictionary<string, List<NotSure>> offense { get; set; }
+
     }
 
     public class CumulativePlayerStats
