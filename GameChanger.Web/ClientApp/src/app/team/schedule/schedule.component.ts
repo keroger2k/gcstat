@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TeamScheduledEvent } from '../../models/teamScheduledEvent';
+import { TeamGameData } from '../../models/teamGameData';
+
 
 @Component({
   selector: 'app-schedule',
@@ -11,6 +13,8 @@ export class ScheduleComponent {
   wins: number = 0;
   losses: number = 0;
   ties: number = 0;
+  game: TeamGameData | undefined;
+  teamId: string | undefined;
 
   @Input() schedule: any;
   @Input() games: any;
@@ -28,9 +32,12 @@ export class ScheduleComponent {
   }
 
   getGameInfo(item: TeamScheduledEvent) {
-    var game = this.games.find((c: { event_id: string; }) => c.event_id == item.event.id);
-    if (game && game.game_data) {
-      return game;
+    var local = this.games?.find((c: { event_id: string; }) => c.event_id == item.event.id);
+    if (local?.game_data) {
+      this.teamId = item.event.team_id;
+      this.game = local;
+      console.log(local);
+      return local;
     }
   }
 }

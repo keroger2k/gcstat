@@ -12,14 +12,14 @@ namespace GameChanger.Core
         private readonly HttpClient _httpClient;
 
         //# GC API Endpoints
-        private readonly string TEAM_SEASON_STATS = "/teams/{0}/season-stats";
-        private readonly string TEAM_GAME_DATA = "/teams/{0}/schedule/batch-simple-scorekeeping-data/";
-        private readonly string TEAM_GAME_STATS = "/teams/{0}/schedule/events/{1}/player-stats";
-        private readonly string TEAM_INFO = "/teams/{0}";
-        private readonly string TEAM_AVATAR = "/teams/{0}/avatar-image";
-        private readonly string TEAM_PLAYERS = "/teams/{0}/players";
-        private readonly string TEAM_SCHEDULE = "/teams/{0}/schedule";
-        private readonly string SEARCH = "/search/team?name={0}&sport=baseball&start_at=0";
+        private readonly string TEAM_SEASON_STATS   = "/teams/{0}/season-stats";
+        private readonly string TEAM_GAME_DATA      = "/teams/{0}/schedule/batch-simple-scorekeeping-data/";
+        private readonly string TEAM_GAME_STATS     = "/teams/{0}/schedule/events/{1}/player-stats";
+        private readonly string TEAM_INFO           = "/teams/{0}";
+        private readonly string TEAM_AVATAR         = "/teams/{0}/avatar-image";
+        private readonly string TEAM_PLAYERS        = "/teams/{0}/players";
+        private readonly string TEAM_SCHEDULE       = "/teams/{0}/schedule";
+        private readonly string SEARCH              = "/search/team?name={0}&sport=baseball&start_at=0";
 
         public GameChangerService(HttpClient httpClient)
         {
