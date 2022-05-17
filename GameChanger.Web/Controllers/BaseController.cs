@@ -1,19 +1,21 @@
 using GameChanger.Core;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GameChanger.Web.Controllers;
-
-[ApiController]
-[Produces("application/json")]
-[Route("api/[controller]")]
-public class BaseController<T>: ControllerBase where T: BaseController<T>
+namespace GameChanger.Web.Controllers
 {
-	internal readonly GameChangerService _gameChangerService;
-	internal readonly ILogger<T> _logger;
 
-	public BaseController(GameChangerService gameChangerService, ILogger<T> logger)
+	[ApiController]
+	[Produces("application/json")]
+	[Route("api/[controller]")]
+	public class BaseController<T> : ControllerBase where T : BaseController<T>
 	{
-		_gameChangerService = gameChangerService;
-		_logger = logger;
+		internal readonly GameChangerService _gameChangerService;
+		internal readonly ILogger<T> _logger;
+
+		public BaseController(GameChangerService gameChangerService, ILogger<T> logger)
+		{
+			_gameChangerService = gameChangerService;
+			_logger = logger;
+		}
 	}
 }
