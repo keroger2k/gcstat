@@ -13,9 +13,7 @@ import { TeamComponent } from './team/team.component';
 import { ScheduleComponent } from './team/schedule/schedule.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material.module';
-
-
-
+import { EventsComponent } from './team/events/events.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +24,7 @@ import { MaterialModule } from '../material.module';
     SearchComponent,
     TeamComponent,
     ScheduleComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,7 +35,8 @@ import { MaterialModule } from '../material.module';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'search', component: SearchComponent },
-      { path: 'team/:teamId', component: TeamComponent }
+      { path: 'team/:teamId', component: TeamComponent },
+      { path: 'team/:teamId/schedule/events/:eventId', component: EventsComponent }
     ]),
     BrowserAnimationsModule
   ],

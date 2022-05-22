@@ -1,31 +1,32 @@
+export type AssociationType = 'manager' | 'family' | 'player' | 'fan';
+
 export interface TeamInfo {
-  id: string
-  name: string
-  team_type: string
-  meta_seq: number
-  created_at: string
-  updated_at: string
-  teamExternalAssociation: any
-  maxPrepsSyncState: any
-  organizations: any[]
-  settings: Settings
-  adminTeam: AdminTeam
-  sport: string
-  city: string
-  state: string
-  country: string
-  age_group: string
-  season_name: string
-  season_year: number
-  competition_level: string
-  stat_access_level: string
-  paid_access_level: any
-  scorekeeping_access_level: string
-  streaming_access_level: string
-  ngb: string
-  user_team_associations: any[]
-  team_avatar_image: any
-  team_player_count: any
+  id: string;
+  name: string;
+  sport: string;
+  city?: string | null;
+  state?: string | null;
+  country?: string | null;
+  age_group: string;
+  season_name: string;
+  season_year: number;
+  competition_level: string;
+  team_type: string;
+  settings?: {
+      scorekeeping?: {
+          bats?: {
+              innings_per_game: number;
+              // There are additional unused fields here.
+          };
+      };
+  };
+  user_team_associations?: AssociationType[];
+  team_avatar_image?: string | null;
+  team_player_count?: number | null; // number of active players on team
+  organizations: {
+      organization_id: string;
+      status: string;
+  }[];
 }
 
 export interface Settings {

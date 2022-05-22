@@ -2,7 +2,7 @@
   <ng-container *ngFor="let item of schedule">
     <ng-container *ngIf="getGameInfo(item)">
       <li *ngIf="game">
-        <a href="/team/{{ teamId }}/schedule/events/{{ game.event_id }}/player-stats">
+        <a href="/team/{{ teamId }}/schedule/events/{{ game.event_id }}">
             <span style="padding:0px 5px 0px 5px; font-weight:bold;">{{  getResult(game.game_data.team_score, game.game_data.opponent_score) }}</span>
            <span style="padding:0px 5px 0px 5px;">{{ game?.game_data?.opponent_score }} - {{ game?.game_data?.team_score }}</span>
            <span style="padding:0px 5px 0px 5px;">{{ item.event.title }}</span>
