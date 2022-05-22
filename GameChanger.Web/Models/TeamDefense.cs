@@ -71,20 +71,20 @@ namespace GameChanger.Core
         public int CB { get; set; }
 
         [JsonPropertyName("CH%")]
-        public int CH { get; set; }
+        public double CH { get; set; }
 
         [JsonPropertyName("CT%")]
-        public int CT { get; set; }
+        public double CT { get; set; }
 
         [JsonPropertyName("DB%")]
-        public int DB { get; set; }
+        public double DB { get; set; }
 
         [JsonPropertyName("DC%")]
-        public int DC { get; set; }
+        public double DC { get; set; }
         public double ERA { get; set; }
 
         [JsonPropertyName("FB%")]
-        public int FB { get; set; }
+        public double FB { get; set; }
         public double FIP { get; set; }
         public int FLB { get; set; }
         public int FLY { get; set; }
@@ -99,16 +99,16 @@ namespace GameChanger.Core
         public double KG { get; set; }
 
         [JsonPropertyName("KB%")]
-        public int KB { get; set; }
+        public double KB { get; set; }
 
         [JsonPropertyName("KC%")]
-        public int KC { get; set; }
+        public double KC { get; set; }
         public int LND { get; set; }
         public int LOB { get; set; }
         public int LOO { get; set; }
 
         [JsonPropertyName("OS%")]
-        public int OffSpeed { get; set; }
+        public double OffSpeed { get; set; }
         public int OSS { get; set; }
         public int PIK { get; set; }
 
@@ -366,7 +366,7 @@ namespace GameChanger.Core
         public int CB { get; set; }
 
         [JsonPropertyName("CH%")]
-        public int CH { get; set; }
+        public double CH { get; set; }
 
         [JsonPropertyName("CT%")]
         public int CT { get; set; }
@@ -378,7 +378,7 @@ namespace GameChanger.Core
         public int DC { get; set; }
 
         [JsonPropertyName("FB%")]
-        public int FB { get; set; }
+        public double FB { get; set; }
         public int FLB { get; set; }
 
         [JsonPropertyName("GB%")]
@@ -397,7 +397,7 @@ namespace GameChanger.Core
         public double OPS { get; set; }
 
         [JsonPropertyName("OS%")]
-        public int OffenseOS { get; set; }
+        public double OffenseOS { get; set; }
         public int OSS { get; set; }
         public int PIK { get; set; }
         public int QAB { get; set; }
@@ -573,7 +573,7 @@ namespace GameChanger.Core
         public int CB { get; set; }
 
         [JsonPropertyName("CH%")]
-        public int CH { get; set; }
+        public double CH { get; set; }
 
         [JsonPropertyName("CT%")]
         public int CT { get; set; }
@@ -586,7 +586,7 @@ namespace GameChanger.Core
         public double ERA { get; set; }
 
         [JsonPropertyName("FB%")]
-        public int FB { get; set; }
+        public double FB { get; set; }
         public double FIP { get; set; }
         public int FLB { get; set; }
         public int FLY { get; set; }
@@ -610,7 +610,7 @@ namespace GameChanger.Core
         public int LOO { get; set; }
 
         [JsonPropertyName("OS%")]
-        public int DefenseOS { get; set; }
+        public double DefenseOS { get; set; }
         public int OSS { get; set; }
         public int PIK { get; set; }
 
@@ -853,7 +853,7 @@ namespace GameChanger.Core
         public int CB { get; set; }
 
         [JsonPropertyName("CH%")]
-        public int CH { get; set; }
+        public double CH { get; set; }
 
         [JsonPropertyName("CT%")]
         public int CT { get; set; }
@@ -865,7 +865,7 @@ namespace GameChanger.Core
         public int DC { get; set; }
 
         [JsonPropertyName("FB%")]
-        public int FB { get; set; }
+        public double FB { get; set; }
         public int FLB { get; set; }
 
         [JsonPropertyName("GB%")]
@@ -884,7 +884,7 @@ namespace GameChanger.Core
         public double OPS { get; set; }
 
         [JsonPropertyName("OS%")]
-        public int DefenseOS { get; set; }
+        public double DefenseOS { get; set; }
         public int OSS { get; set; }
         public int PIK { get; set; }
         public int QAB { get; set; }
