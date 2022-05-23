@@ -1,13 +1,11 @@
 <!--<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">-->
-
-  <!-- Position Column -->
-  <!--<ng-container matColumnDef="firstName">
-    <th mat-header-cell *matHeaderCellDef> firstName </th>
-    <td mat-cell *matCellDef="let player"> {{ player.firstName }} </td>
-  </ng-container>-->
-
-  <!-- Name Column -->
-  <!--<ng-container matColumnDef="lastName">
+<!-- Position Column -->
+<!--<ng-container matColumnDef="firstName">
+  <th mat-header-cell *matHeaderCellDef> firstName </th>
+  <td mat-cell *matCellDef="let player"> {{ player.firstName }} </td>
+</ng-container>-->
+<!-- Name Column -->
+<!--<ng-container matColumnDef="lastName">
     <th mat-header-cell *matHeaderCellDef> lastName </th>
     <td mat-cell *matCellDef="let player"> {{ player.lastName}} </td>
   </ng-container>
@@ -67,42 +65,46 @@
           <td class="jerseyNumberCell">{{ player.number }}</td>
           <td class="playerNameCell invertLinkUnderline strong">{{ player.firstName }}</td>
           <td class="playerNameCell invertLinkUnderline strong">{{ player.lastName }}</td>
-          <td class="statCell">{{ player.offense.gp }}</td>
-          <td class="statCell">{{ player.offense.pa }}</td>
-          <td class="statCell">{{ player.offense.ab }}</td>
-          <td class="statCell">{{ player.offense.h }}</td>
-          <td class="statCell">{{ player.offense["1B"] }}</td>
-          <td class="statCell">{{ player.offense["2B"] }}</td>
-          <td class="statCell">{{ player.offense["3B"] }}</td>
-          <td class="statCell">{{ player.offense.hr }}</td>
-          <td class="statCell">{{ player.offense.rbi }}</td>
-          <td class="statCell">{{ player.offense.r }}</td>
-          <td class="statCell">{{ player.offense.hbp }}</td>
-          <td class="statCell">{{ player.offense.roe }}</td>
-          <td class="statCell">{{ player.offense.fc }}</td>
-          <td class="statCell">{{ player.offense.ci }}</td>
-          <td class="statCell">{{ player.offense.bb }}</td>
-          <td class="statCell">{{ player.offense.so }}</td>
-          <td class="statCell">{{ player.offense.avg | number: '1.3-3' }}</td>
-          <td class="statCell">{{ player.offense.obp | number: '1.3-3' }}</td>
-          <td class="statCell">{{ player.offense.slg | number: '1.3-3' }}</td>
-          <td class="statCell">{{ player.offense.ops | number: '1.3-3' }}</td>
-          <td class="statCell">{{ player.defense.ip | number: '1.1-1'}}</td>
-          <td class="statCell">{{ player.defense.h }}</td>
-          <td class="statCell">{{ player.defense.r }}</td>
-          <td class="statCell">{{ player.defense.er }}</td>
-          <td class="statCell">{{ player.defense.bb }}</td>
-          <td class="statCell">{{ player.defense.so }}</td>
-          <td class="statCell">{{ player.defense.bf }}</td>
-          <td class="statCell">{{ player.defense["#P"] }}</td>
-          <td class="statCell">{{ player.defense.ts }}</td>
-          <td class="statCell">{{ player.defense.tb }}</td>
-          <td class="statCell">{{ player.defense.hbp }}</td>
-          <td class="statCell">{{ player.defense.era | number: '1.3-3' }}</td>
-          <td class="statCell">{{ player.defense["S%"] * 100 | number: '1.3-3' }}</td>
-          <td class="statCell">{{ player.defense.baa | number: '1.3-3' }}</td>
-          <td class="statCell">{{ player.defense.sb }}</td>
-          <td class="statCell">{{ player.defense.cs }}</td>
+          <ng-container *ngIf="player.offense">
+            <td class="statCell">{{ player.offense.gp }}</td>
+            <td class="statCell">{{ player.offense.pa }}</td>
+            <td class="statCell">{{ player.offense.ab }}</td>
+            <td class="statCell">{{ player.offense.h }}</td>
+            <td class="statCell">{{ player.offense["1B"] }}</td>
+            <td class="statCell">{{ player.offense["2B"] }}</td>
+            <td class="statCell">{{ player.offense["3B"] }}</td>
+            <td class="statCell">{{ player.offense.hr }}</td>
+            <td class="statCell">{{ player.offense.rbi }}</td>
+            <td class="statCell">{{ player.offense.r }}</td>
+            <td class="statCell">{{ player.offense.hbp }}</td>
+            <td class="statCell">{{ player.offense.roe }}</td>
+            <td class="statCell">{{ player.offense.fc }}</td>
+            <td class="statCell">{{ player.offense.ci }}</td>
+            <td class="statCell">{{ player.offense.bb }}</td>
+            <td class="statCell">{{ player.offense.so }}</td>
+            <td class="statCell">{{ player.offense.avg | number: '1.3-3' }}</td>
+            <td class="statCell">{{ player.offense.obp | number: '1.3-3' }}</td>
+            <td class="statCell">{{ player.offense.slg | number: '1.3-3' }}</td>
+            <td class="statCell">{{ player.offense.ops | number: '1.3-3' }}</td>
+          </ng-container>
+          <ng-container *ngIf="player.defense">
+            <td class="statCell">{{ player.defense.ip | number: '1.1-1'}}</td>
+            <td class="statCell">{{ player.defense.h }}</td>
+            <td class="statCell">{{ player.defense.r }}</td>
+            <td class="statCell">{{ player.defense.er }}</td>
+            <td class="statCell">{{ player.defense.bb }}</td>
+            <td class="statCell">{{ player.defense.so }}</td>
+            <td class="statCell">{{ player.defense.bf }}</td>
+            <td class="statCell">{{ player.defense["#P"] }}</td>
+            <td class="statCell">{{ player.defense.ts }}</td>
+            <td class="statCell">{{ player.defense.tb }}</td>
+            <td class="statCell">{{ player.defense.hbp }}</td>
+            <td class="statCell">{{ player.defense.era | number: '1.3-3' }}</td>
+            <td class="statCell">{{ player.defense["S%"] * 100 | number: '1.3-3' }}</td>
+            <td class="statCell">{{ player.defense.baa | number: '1.3-3' }}</td>
+            <td class="statCell">{{ player.defense.sb }}</td>
+            <td class="statCell">{{ player.defense.cs }}</td>
+          </ng-container>
         </tr>
       </ng-container>
     </tbody>

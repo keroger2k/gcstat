@@ -2,7 +2,6 @@
 
 namespace GameChanger.Core
 {
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
     public class Defense
     {
         public int A { get; set; }
