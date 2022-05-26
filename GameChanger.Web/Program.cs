@@ -1,4 +1,5 @@
 using GameChanger.Core;
+using GameChanger.Web.Authorization;
 using Microsoft.OpenApi.Models;
 
 
@@ -10,13 +11,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped(sp =>
 {
     var http = new HttpClient();
+    var token = AuthorizationHelper.GetAuthorizationToken(builder.Configuration.GetValue<string>("GC-USERNAME"), builder.Configuration.GetValue<string>("GC-PASSWORD"));
     http.BaseAddress = new Uri("https://api.team-manager.gc.com");
-    http.DefaultRequestHeaders.Add("gc-token", builder.Configuration.GetValue<string>("GC-TOKEN"));
-    http.DefaultRequestHeaders.Add("Gc-App-Version", "5.8.1.4");
-    http.DefaultRequestHeaders.Add("Gc-App-Name", "iOS");
-    http.DefaultRequestHeaders.Add("User-Agent", "odyssey/5.8.1 (com.gc.teammanager; build:4; iOS 15.4.1) Alamofire/5.5.0");
+    http.DefaultRequestHeaders.Add("gc-token", token);
     return http;
 });
+
 
 builder.Services.AddScoped<GameChangerService>();
 

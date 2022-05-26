@@ -36,7 +36,7 @@ export class ScheduleComponent {
     if (local?.game_data) {
       this.teamId = item.event.team_id;
       this.game = local;
-      console.log(local);
+      //console.log(local);
       return local;
     }
   }
