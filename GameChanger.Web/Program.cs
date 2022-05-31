@@ -1,5 +1,4 @@
 using GameChanger.Core;
-using GameChanger.Web.Authorization;
 using Microsoft.OpenApi.Models;
 
 
@@ -11,9 +10,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped(sp =>
 {
     var http = new HttpClient();
-    var token = AuthorizationHelper.GetAuthorizationToken(builder.Configuration.GetValue<string>("GC-USERNAME"), builder.Configuration.GetValue<string>("GC-PASSWORD"));
     http.BaseAddress = new Uri("https://api.team-manager.gc.com");
-    http.DefaultRequestHeaders.Add("gc-token", token);
+    http.DefaultRequestHeaders.Add("gc-token", builder.Configuration.GetValue<string>("GC-TOKEN"));
     return http;
 });
 

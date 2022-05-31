@@ -2,7 +2,7 @@
 
 namespace GameChanger.Core
 {
-    public class TeamOffense
+    public class Offense
     {
         public int H { get; set; }
         public int R { get; set; }
@@ -146,6 +146,7 @@ namespace GameChanger.Core
         public double PSPA { get; set; }
         public int ABRISP { get; set; }
         public int _2OUTRBI { get; set; }
+        public int _3OUTLOB { get; set; }
 
         [JsonPropertyName("BA/RISP")]
         public double BARISP { get; set; }

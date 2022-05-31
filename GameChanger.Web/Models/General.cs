@@ -1,6 +1,6 @@
 ﻿namespace GameChanger.Core
 {
-    public class TeamGeneral
+    public class General
     {
         public int GP { get; set; }
     }

@@ -2,8 +2,7 @@
 
 namespace GameChanger.Core
 {
-
-    public class Statistics
+    public class Defense
     {
         public int A { get; set; }
         public int E { get; set; }
@@ -31,6 +30,7 @@ namespace GameChanger.Core
         public int BS { get; set; }
         public int CI { get; set; }
         public int CS { get; set; }
+        public int DP { get; set; }
         public int ER { get; set; }
         public int FC { get; set; }
         public int GB { get; set; }
@@ -58,7 +58,7 @@ namespace GameChanger.Core
         public int _13 { get; set; }
 
         [JsonPropertyName("<3%")]
-        public double Defense_3 { get; set; }
+        public double _LT3 { get; set; }
         public double BAA { get; set; }
         public int BBS { get; set; }
 
@@ -86,7 +86,7 @@ namespace GameChanger.Core
         public int FPS { get; set; }
 
         [JsonPropertyName("GB%")]
-        public double DefenseGB { get; set; }
+        public double GroundBallPercent { get; set; }
         public int HBP { get; set; }
         public int INP { get; set; }
 
@@ -103,15 +103,15 @@ namespace GameChanger.Core
         public int LOO { get; set; }
 
         [JsonPropertyName("OS%")]
-        public double DefenseOS { get; set; }
+        public double OffSpeed { get; set; }
         public int OSS { get; set; }
         public int PIK { get; set; }
 
         [JsonPropertyName("RB%")]
-        public double RB { get; set; }
+        public int RB { get; set; }
 
         [JsonPropertyName("SB%")]
-        public double DefenseSB { get; set; }
+        public double OpponentStolenBasePercent { get; set; }
 
         [JsonPropertyName("SC%")]
         public double SC { get; set; }
@@ -122,12 +122,12 @@ namespace GameChanger.Core
         public double SL { get; set; }
 
         [JsonPropertyName("SM%")]
-        public double DefenseSM { get; set; }
+        public double PitchingSwingMissPercent { get; set; }
         public int SOL { get; set; }
         public int SVO { get; set; }
 
         [JsonPropertyName("<13%")]
-        public double Defense_13 { get; set; }
+        public double LessThan13PitchesPercent { get; set; }
 
         [JsonPropertyName("CI:C")]
         public int CIC { get; set; }
@@ -139,14 +139,14 @@ namespace GameChanger.Core
         public int DPP { get; set; }
 
         [JsonPropertyName("FLB%")]
-        public double DefenseFLB { get; set; }
+        public double FlyBallPercentage { get; set; }
 
         [JsonPropertyName("FLY%")]
-        public double DefenseFLY { get; set; }
+        public double FlySomethingPercentage { get; set; }
         public double FPCT { get; set; }
 
         [JsonPropertyName("FPS%")]
-        public double DefenseFPS { get; set; }
+        public double FirstPitchStrike { get; set; }
         public int FPSH { get; set; }
         public int FPSO { get; set; }
         public int FPSW { get; set; }
@@ -175,14 +175,14 @@ namespace GameChanger.Core
         public double KBF { get; set; }
 
         [JsonPropertyName("LND%")]
-        public double DefenseLND { get; set; }
+        public double LinedSomethingPercentage { get; set; }
 
         [JsonPropertyName("LOB%")]
-        public double DefenseLOB { get; set; }
+        public double LOB_Something { get; set; }
         public int LOBB { get; set; }
 
         [JsonPropertyName("LOO%")]
-        public double DefenseLOO { get; set; }
+        public double LeadOffOutPercentage { get; set; }
         public int OSSM { get; set; }
         public int OSSW { get; set; }
 
@@ -206,22 +206,22 @@ namespace GameChanger.Core
         public double BABIP { get; set; }
 
         [JsonPropertyName("CS:C%")]
-        public double DefenseCSC { get; set; }
+        public double CaughtStealingCatcherPercentage { get; set; }
 
         [JsonPropertyName("FPSH%")]
-        public double DefenseFPSH { get; set; }
+        public double FirstPitchResultInStrikePercentage { get; set; }
 
         [JsonPropertyName("FPSO%")]
-        public double DefenseFPSO { get; set; }
+        public double FirstPitchResultInStrikeOutPercentage { get; set; }
 
         [JsonPropertyName("FPSW%")]
-        public double DefenseFPSW { get; set; }
+        public double FirstPitchResultInStrikeWalkPercentage { get; set; }
 
         [JsonPropertyName("GO/AO")]
         public double GOAO { get; set; }
 
         [JsonPropertyName("HARD%")]
-        public double DefenseHARD { get; set; }
+        public double HARD_Something { get; set; }
         public int HRISP { get; set; }
 
         [JsonPropertyName("IP:1B")]
@@ -243,21 +243,20 @@ namespace GameChanger.Core
         public double IPRF { get; set; }
 
         [JsonPropertyName("IP:SF")]
-        public double IPSF { get; set; }
+        public int IPSF { get; set; }
 
         [JsonPropertyName("IP:SS")]
         public double IPSS { get; set; }
-        public double LBFPN { get; set; }
         public double LOBBS { get; set; }
 
         [JsonPropertyName("PIK:C")]
         public int PIKC { get; set; }
 
         [JsonPropertyName("SB:C%")]
-        public double DefenseSBC { get; set; }
+        public double StolenBaseCatcherPercentage { get; set; }
 
         [JsonPropertyName("WEAK%")]
-        public double DefenseWEAK { get; set; }
+        public double WEAK_Something { get; set; }
         public int _0BBINN { get; set; }
         public int _123INN { get; set; }
         public int ABRISP { get; set; }
@@ -272,13 +271,13 @@ namespace GameChanger.Core
         public int OutsP { get; set; }
 
         [JsonPropertyName("outs:C")]
-        public double DefenseOutsC { get; set; }
+        public int OutsC_Something { get; set; }
 
         [JsonPropertyName("outs:F")]
         public int OutsF { get; set; }
 
         [JsonPropertyName("123INN%")]
-        public double OneTwoThreeINN { get; set; }
+        public double OneTwoThreeINN_Percentage { get; set; }
         public int _1ST2OUT { get; set; }
 
         [JsonPropertyName("BA/RISP")]
@@ -290,87 +289,11 @@ namespace GameChanger.Core
         [JsonPropertyName("outs-1B")]
         public int Outs1B { get; set; }
 
-        [JsonPropertyName("outs-3B")]
-        public int Outs3B { get; set; }
-
-        [JsonPropertyName("1ST2OUT%")]
-        public double FirstTwoOut { get; set; }
-        public int _2STRIKES { get; set; }
-    }
-
-
-    public class TeamStatistics : Statistics
-    {
-
-        [JsonPropertyName("<3")]
-        public int LT3 { get; set; }
-        public int DP { get; set; }
-
-        [JsonPropertyName("GB%")]
-        public double GBPercent { get; set; }
-
-        [JsonPropertyName("OS%")]
-        public double OSPercent { get; set; }
-        
-        [JsonPropertyName("SB%")]
-        public double SBPercent { get; set; }
-
-        [JsonPropertyName("SM%")]
-        public double SMPercent { get; set; }
-
-        [JsonPropertyName("SV%")]
-        public double SVPercent { get; set; }
-
-        [JsonPropertyName("<13%")]
-        public double _13Percent { get; set; }
-
-        [JsonPropertyName("FLB%")]
-        public double FLBPercent { get; set; }
-
-        [JsonPropertyName("FLY%")]
-        public double FLYPercent { get; set; }
-
-        [JsonPropertyName("FPS%")]
-        public double FPSPercent { get; set; }
-
-        [JsonPropertyName("LND%")]
-        public double LNDPercent { get; set; }
-
-        [JsonPropertyName("LOB%")]
-        public double LOBPercent { get; set; }
-
-        [JsonPropertyName("LOO%")]
-        public double LOOPercent { get; set; }
-
-        [JsonPropertyName("CS:C%")]
-        public double CSCPercent { get; set; }
-
-        [JsonPropertyName("FPSH%")]
-        public double FPSHPercent { get; set; }
-
-        [JsonPropertyName("FPSO%")]
-        public double FPSOPercent { get; set; }
-
-        [JsonPropertyName("FPSW%")]
-        public double FPSWPercent { get; set; }
-
-        [JsonPropertyName("HARD%")]
-        public double HARDPercent { get; set; }
-
-        [JsonPropertyName("SB:C%")]
-        public double SBCPercent { get; set; }
-
-        [JsonPropertyName("WEAK%")]
-        public double WEAKPercent { get; set; }
-
-        [JsonPropertyName("outs:C")]
-        public int OutsCc { get; set; }
-
-        [JsonPropertyName("123INN%")]
-        public double _123INNPercent { get; set; }
-
         [JsonPropertyName("outs-2B")]
         public int Outs2B { get; set; }
+
+        [JsonPropertyName("outs-3B")]
+        public int Outs3B { get; set; }
 
         [JsonPropertyName("outs-CF")]
         public int OutsCF { get; set; }
@@ -385,9 +308,7 @@ namespace GameChanger.Core
         public int OutsSS { get; set; }
 
         [JsonPropertyName("1ST2OUT%")]
-        public double _1ST2OUTPercent { get; set; }
-        public Dictionary<string, NotSure> players { get; set; }
-
+        public double First2OUTPercentage { get; set; }
+        public int _2STRIKES { get; set; }
     }
-
 }
