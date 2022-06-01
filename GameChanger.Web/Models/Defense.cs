@@ -243,7 +243,7 @@ namespace GameChanger.Core
         public double IPRF { get; set; }
 
         [JsonPropertyName("IP:SF")]
-        public int IPSF { get; set; }
+        public double IPSF { get; set; }
 
         [JsonPropertyName("IP:SS")]
         public double IPSS { get; set; }
