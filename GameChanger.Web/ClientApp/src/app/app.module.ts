@@ -14,6 +14,7 @@ import { ScheduleComponent } from './team/schedule/schedule.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material.module';
 import { EventsComponent } from './team/events/events.component';
+import { SprayChartComponent } from './team/spray-chart/sparychart.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EventsComponent } from './team/events/events.component';
     SearchComponent,
     TeamComponent,
     ScheduleComponent,
-    EventsComponent
+    EventsComponent,
+    SprayChartComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,6 +38,7 @@ import { EventsComponent } from './team/events/events.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'search', component: SearchComponent },
       { path: 'team/:teamId', component: TeamComponent },
+      { path: 'team/:teamId/spray-chart', component: SprayChartComponent },
       { path: 'team/:teamId/schedule/events/:eventId', component: EventsComponent }
     ]),
     BrowserAnimationsModule

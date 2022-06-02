@@ -395,16 +395,30 @@
     <None Remove="ClientApp\dist\runtime.97c30f4e67906c3b.js" />
     <None Remove="ClientApp\dist\scripts.37c6a60f6acc053f.js" />
     <None Remove="ClientApp\dist\styles.97d0460b0013ca12.css" />
+    <None Remove="ClientApp\src\app\BaseballDiamond.ts" />
+    <None Remove="ClientApp\src\app\components\baseballdiamond.component.css" />
+    <None Remove="ClientApp\src\app\components\baseballdiamond.component.ts" />
+    <None Remove="ClientApp\src\app\models\spraychart.ts" />
     <None Remove="ClientApp\src\app\models\teamGameData.ts" />
     <None Remove="ClientApp\src\app\models\teamInfo.ts" />
     <None Remove="ClientApp\src\app\models\teamScheduledEvent.ts" />
+    <None Remove="ClientApp\src\app\spray-chart-helpers.ts" />
     <None Remove="ClientApp\src\material.module.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\components\baseballdiamond.component.css">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\components\baseballdiamond.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\components\baseballdiamond.component.svg" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\spraychart.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\teamGameData.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\teamInfo.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\teamScheduledEvent.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\util\spray-chart-helpers.ts" />
     <TypeScriptCompile Include="ClientApp\src\material.module.ts" />
   </ItemGroup>
 
