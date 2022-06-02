@@ -64,6 +64,8 @@ namespace GameChanger.Web.Controllers
             //get list of team players
             var listOfPlayers = await _gameChangerService.GetTeamPlayersAsync(id);
 
+            var seasonStats = await _gameChangerService.GetTeamStatsAsync(id);
+
             //convert objects to include spray info
             var listOfPlayerWithSpray = listOfPlayers.Select(c => new PlayerSprayChart(c));
 
@@ -112,6 +114,7 @@ namespace GameChanger.Web.Controllers
             {
                 var p = listOfPlayerWithSpray.First(p => p.Id == item.Key);
                 p.SprayChart.AddRange(item.Value);
+                p.OffenseInfo = seasonStats.stats_data.players[p.Id].stats.offense;
                 newlistOfPlayer.Add(p); 
             }
 

@@ -26,7 +26,8 @@ namespace GameChanger.Core
 			this.SprayChart = new List<NotSure>();
         }
 		public List<NotSure> SprayChart {  get ; set; }
-    }
+		public Offense OffenseInfo { get; set; }
+	}
 
     public class PlayerInfoResults
     {

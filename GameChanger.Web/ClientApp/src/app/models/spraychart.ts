@@ -1,5 +1,8 @@
+import { Offense } from './teamStat';
+
 export interface PlayerSprayRoot {
   sprayChart: SprayChart[]
+  offenseInfo: Offense
   id: string
   first_name: string
   last_name: string
