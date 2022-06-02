@@ -77,26 +77,32 @@ namespace GameChanger.Web.Controllers
             //foreach Event find players offensive spray chart info
             foreach (var gameEvent in filteredListOfGameEvents)
             {
-                //get the event spray chart details
-                var teamStats = await _gameChangerService.GetTeamEventStatsAsync(id, gameEvent);
-
-                foreach (var player in listOfPlayerWithSpray)
+                try
                 {
-                    var playerSpray = teamStats.spray_chart_data.offense.Where(c => c.Key == player.Id).Select(c => c.Value);
-                    foreach (var item in playerSpray)
+                    //get the event spray chart details
+                    var teamStats = await _gameChangerService.GetTeamEventStatsAsync(id, gameEvent);
+
+                    foreach (var player in listOfPlayerWithSpray)
                     {
-                        foreach (var item1 in item)
+                        var playerSpray = teamStats.spray_chart_data.offense.Where(c => c.Key == player.Id).Select(c => c.Value);
+                        foreach (var item in playerSpray)
                         {
-                            if (testing.ContainsKey(player.Id))
+                            foreach (var item1 in item)
                             {
-                                testing[player.Id].Add(item1);
-                            }
-                            else
-                            {
-                                testing.Add(player.Id, new List<NotSure>() {  item1 });
+                                if (testing.ContainsKey(player.Id))
+                                {
+                                    testing[player.Id].Add(item1);
+                                }
+                                else
+                                {
+                                    testing.Add(player.Id, new List<NotSure>() { item1 });
+                                }
                             }
                         }
                     }
+                }
+                catch (Exception)
+                {
                 }
             }
 

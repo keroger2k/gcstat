@@ -12,16 +12,16 @@ namespace GameChanger.Core
         private readonly HttpClient _httpClient;
 
         //# GC API Endpoints
-        private readonly string TEAM_SEASON_STATS   = "/teams/{0}/season-stats";
-        private readonly string TEAM_GAME_DATA      = "/teams/{0}/schedule/batch-simple-scorekeeping-data/";
-        private readonly string TEAM_GAME_STATS     = "/teams/{0}/schedule/events/{1}/player-stats";
-        private readonly string TEAM_INFO           = "/teams/{0}";
-        private readonly string TEAM_AVATAR         = "/teams/{0}/avatar-image";
-        private readonly string TEAM_PLAYERS        = "/teams/{0}/players";
-        private readonly string TEAM_SCHEDULE       = "/teams/{0}/schedule/?fetch_place_details=true";
-        private readonly string SEARCH              = "/search/team?name={0}&sport=baseball&start_at=0";
-        private readonly string GAME_RECAP_STORY    = "/game-streams/gamestream-recap-story/{0}";
-        private readonly string GAME_RECAP_PAYLOAD  = "/game-streams/gamestream-viewer-payload-lite/{0}?stream_id={1}";
+        private readonly string TEAM_SEASON_STATS = "/teams/{0}/season-stats";
+        private readonly string TEAM_GAME_DATA = "/teams/{0}/schedule/batch-simple-scorekeeping-data/";
+        private readonly string TEAM_GAME_STATS = "/teams/{0}/schedule/events/{1}/player-stats";
+        private readonly string TEAM_INFO = "/teams/{0}";
+        private readonly string TEAM_AVATAR = "/teams/{0}/avatar-image";
+        private readonly string TEAM_PLAYERS = "/teams/{0}/players";
+        private readonly string TEAM_SCHEDULE = "/teams/{0}/schedule/?fetch_place_details=true";
+        private readonly string SEARCH = "/search/team?name={0}&sport=baseball&start_at=0";
+        private readonly string GAME_RECAP_STORY = "/game-streams/gamestream-recap-story/{0}";
+        private readonly string GAME_RECAP_PAYLOAD = "/game-streams/gamestream-viewer-payload-lite/{0}?stream_id={1}";
         public GameChangerService(HttpClient httpClient)
         {
             _httpClient = httpClient;
@@ -53,7 +53,7 @@ namespace GameChanger.Core
         public async Task<IEnumerable<PlayerInfoResults>> GetTeamPlayersAsync(string teamId)
         {
             var url = string.Format(TEAM_PLAYERS, teamId);
-            var result  =  JsonSerializer.Deserialize<IEnumerable<PlayerInfoResults>>(await GetRequestAsync(url));
+            var result = JsonSerializer.Deserialize<IEnumerable<PlayerInfoResults>>(await GetRequestAsync(url));
             return result;
         }
         public async Task<Team> GetTeamAsync(string teamId)
