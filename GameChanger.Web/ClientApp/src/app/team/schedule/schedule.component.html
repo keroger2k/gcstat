@@ -3,9 +3,15 @@
     <ng-container *ngIf="getGameInfo(item)">
       <li *ngIf="game">
         <a href="/team/{{ teamId }}/schedule/events/{{ game.event_id }}">
+          <div *ngIf="game.game_data; then thenBlock else elseBlock"></div>
+          <ng-template #thenBlock>
             <span style="padding:0px 5px 0px 5px; font-weight:bold;">{{  getResult(game.game_data.team_score, game.game_data.opponent_score) }}</span>
-           <span style="padding:0px 5px 0px 5px;">{{ game?.game_data?.opponent_score }} - {{ game?.game_data?.team_score }}</span>
-           <span style="padding:0px 5px 0px 5px;">{{ item.event.title }}</span>
+            <span style="padding:0px 5px 0px 5px;">{{ game?.game_data?.opponent_score }} - {{ game?.game_data?.team_score }}</span>
+            <span style="padding:0px 5px 0px 5px;">{{ item.event.title }}</span>
+          </ng-template>
+          <ng-template #elseBlock>
+            <span style="padding:0px 5px 0px 5px;">{{ item.event.title }}</span>
+          </ng-template>
         </a>
       </li>
     </ng-container>

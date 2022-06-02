@@ -33,11 +33,9 @@ export class ScheduleComponent {
 
   getGameInfo(item: TeamScheduledEvent) {
     var local = this.games?.find((c: { event_id: string; }) => c.event_id == item.event.id);
-    if (local?.game_data) {
-      this.teamId = item.event.team_id;
-      this.game = local;
-      //console.log(local);
-      return local;
-    }
+    this.teamId = item.event.team_id;
+    this.game = local;
+    console.log(item);
+    return local;
   }
 }

@@ -18,14 +18,14 @@ namespace GameChanger.Core
         private readonly string TEAM_INFO           = "/teams/{0}";
         private readonly string TEAM_AVATAR         = "/teams/{0}/avatar-image";
         private readonly string TEAM_PLAYERS        = "/teams/{0}/players";
-        private readonly string TEAM_SCHEDULE       = "/teams/{0}/schedule";
+        private readonly string TEAM_SCHEDULE       = "/teams/{0}/schedule/?fetch_place_details=true";
         private readonly string SEARCH              = "/search/team?name={0}&sport=baseball&start_at=0";
-
+        private readonly string GAME_RECAP_STORY    = "/game-streams/gamestream-recap-story/{0}";
+        private readonly string GAME_RECAP_PAYLOAD  = "/game-streams/gamestream-viewer-payload-lite/{0}?stream_id={1}";
         public GameChangerService(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
-
         public async Task<IEnumerable<Game>> GetTeamGameDataAsync(string teamId)
         {
             var url = string.Format(TEAM_GAME_DATA, teamId);
@@ -38,28 +38,24 @@ namespace GameChanger.Core
             var result = JsonSerializer.Deserialize<TeamAvatar>(await GetRequestAsync(url));
             return result;
         }
-        
         public async Task<TeamStatsRoot> GetTeamStatsAsync(string teamId)
         {
             var url = string.Format(TEAM_SEASON_STATS, teamId);
             var result = JsonSerializer.Deserialize<TeamStatsRoot>(await GetRequestAsync(url));
             return result;
         }
-
         public async Task<IEnumerable<TeamScheduledEvent>> GetTeamScheduledEventsAsync(string teamId)
         {
             var url = string.Format(TEAM_SCHEDULE, teamId);
             var result = JsonSerializer.Deserialize<IEnumerable<TeamScheduledEvent>>(await GetRequestAsync(url));
             return result;
         }
-
         public async Task<IEnumerable<PlayerInfoResults>> GetTeamPlayersAsync(string teamId)
         {
             var url = string.Format(TEAM_PLAYERS, teamId);
             var result  =  JsonSerializer.Deserialize<IEnumerable<PlayerInfoResults>>(await GetRequestAsync(url));
             return result;
         }
-
         public async Task<Team> GetTeamAsync(string teamId)
         {
             var url = string.Format(TEAM_INFO, teamId);
@@ -72,14 +68,12 @@ namespace GameChanger.Core
             var result = JsonSerializer.Deserialize<TeamEventStats>(await GetRequestAsync(url));
             return result;
         }
-
         public async Task<SearchResults> SearchTeamsAsync(string query)
         {
             var url = string.Format(SEARCH, query);
             var result = JsonSerializer.Deserialize<SearchResults>(await GetRequestAsync(url));
             return result;
         }
-
         private async Task<string> GetRequestAsync(string url)
         {
             var response = await _httpClient.GetAsync(url);

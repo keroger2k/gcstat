@@ -2,6 +2,32 @@
 
 namespace GameChanger.Core
 {
+
+	public class PlayerSprayChart : PlayerInfoResults
+    {
+        public PlayerSprayChart()
+        {
+
+        }
+        public PlayerSprayChart(PlayerInfoResults result)
+        {
+			this.Id = result.Id;
+			this.FirstName = result.FirstName;
+			this.LastName = result.LastName;	
+			this.Number = result.Number;
+			this.Status = result.Status;
+			this.TeamId = result.TeamId;
+			this.UserId = result.UserId; 
+			this.MetaSeq = result.MetaSeq;
+			this.CreatedAt = result.CreatedAt;
+			this.UpdatedAt = result.UpdatedAt;
+			this.Bats = result.Bats; 
+			this.PersonId = result.PersonId;
+			this.SprayChart = new List<NotSure>();
+        }
+		public List<NotSure> SprayChart {  get ; set; }
+    }
+
     public class PlayerInfoResults
     {
 		[JsonPropertyName("id")]
