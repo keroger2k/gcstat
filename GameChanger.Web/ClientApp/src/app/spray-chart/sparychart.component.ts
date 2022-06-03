@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { PostService } from '../../services/post.service';
-import { PlayerSprayRoot } from '../../models/spraychart'
+import { PostService } from '../services/post.service';
+import { PlayerSprayRoot } from '../models/spraychart'
+import { TeamInfo } from '../models/teamInfo';
+
 
 
 @Component({
@@ -15,6 +17,9 @@ export class SprayChartComponent implements OnInit {
   teamId: string | undefined;
   routeSub: Subscription = new Subscription;
   playerSprayInfo: Array<PlayerSprayRoot> | undefined;
+  teamInfo: TeamInfo | undefined;
+
+
 
   constructor(private postService: PostService, private route: ActivatedRoute) { }
 
@@ -25,7 +30,14 @@ export class SprayChartComponent implements OnInit {
 
       this.postService.teamSprayData(params.teamId).subscribe(results => {
         this.playerSprayInfo = results;
-      })
+      });
+
+      this.postService.teamInfo(params.teamId).subscribe(results => {
+        this.teamInfo = undefined;
+        this.teamInfo = results;
+      });
+
+
     });
   }
 

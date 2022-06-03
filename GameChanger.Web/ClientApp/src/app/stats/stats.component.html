@@ -1,0 +1,141 @@
+<team-nav-bar></team-nav-bar>
+
+<div *ngIf="currentTeam" id="stats_container">
+  <div class="statsPageContainer grid">
+    <table class="gcTable statTable withGridLines withOutline withHoverHighlighting">
+      <thead>
+        <tr>
+          <th class="jerseyNumberCell header">#</th>
+          <th class="playerNameCell invertLinkUnderline strong header headerSortDown">First</th>
+          <th class="playerNameCell invertLinkUnderline strong header headerSortDown">Last</th>
+          <th class="statCell header">GP</th>
+          <th class="statCell header">PA</th>
+          <th class="statCell header">AB</th>
+          <th class="statCell header">H</th>
+          <th class="statCell header">1B</th>
+          <th class="statCell header">2B</th>
+          <th class="statCell header">3B</th>
+          <th class="statCell header">HR</th>
+          <th class="statCell header">RBI</th>
+          <th class="statCell header">R</th>
+          <th class="statCell header">HBP</th>
+          <th class="statCell header">ROE</th>
+          <th class="statCell header">FC</th>
+          <th class="statCell header">CI</th>
+          <th class="statCell header">BB</th>
+          <th class="statCell header">SO</th>
+          <th class="statCell header">AVG</th>
+          <th class="statCell header">OBP</th>
+          <th class="statCell header">SLG</th>
+          <th class="statCell header">OPS</th>
+          <th class="statCell header">IP</th>
+          <th class="statCell header">H</th>
+          <th class="statCell header">R</th>
+          <th class="statCell header">ER</th>
+          <th class="statCell header">BB</th>
+          <th class="statCell header">SO</th>
+          <th class="statCell header">BF</th>
+          <th class="statCell header">#P</th>
+          <th class="statCell header">#S</th>
+          <th class="statCell header">#B</th>
+          <th class="statCell header">HBP</th>
+          <th class="statCell header">ERA</th>
+          <th class="statCell header">S%</th>
+          <th class="statCell header">BAA</th>
+          <th class="statCell header">SB</th>
+          <th class="statCell header">CS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let player of players">
+          <tr class="whiteRow odd">
+            <td class="jerseyNumberCell">{{ player.number }}</td>
+            <td class="playerNameCell invertLinkUnderline strong">{{ player.firstName }}</td>
+            <td class="playerNameCell invertLinkUnderline strong">{{ player.lastName }}</td>
+            <ng-container *ngIf="player.offense">
+              <td class="statCell">{{ player.offense.gp }}</td>
+              <td class="statCell">{{ player.offense.pa }}</td>
+              <td class="statCell">{{ player.offense.ab }}</td>
+              <td class="statCell">{{ player.offense.h }}</td>
+              <td class="statCell">{{ player.offense["1B"] }}</td>
+              <td class="statCell">{{ player.offense["2B"] }}</td>
+              <td class="statCell">{{ player.offense["3B"] }}</td>
+              <td class="statCell">{{ player.offense.hr }}</td>
+              <td class="statCell">{{ player.offense.rbi }}</td>
+              <td class="statCell">{{ player.offense.r }}</td>
+              <td class="statCell">{{ player.offense.hbp }}</td>
+              <td class="statCell">{{ player.offense.roe }}</td>
+              <td class="statCell">{{ player.offense.fc }}</td>
+              <td class="statCell">{{ player.offense.ci }}</td>
+              <td class="statCell">{{ player.offense.bb }}</td>
+              <td class="statCell">{{ player.offense.so }}</td>
+              <td class="statCell">{{ player.offense.avg | number: '1.3-3' }}</td>
+              <td class="statCell">{{ player.offense.obp | number: '1.3-3' }}</td>
+              <td class="statCell">{{ player.offense.slg | number: '1.3-3' }}</td>
+              <td class="statCell">{{ player.offense.ops | number: '1.3-3' }}</td>
+            </ng-container>
+            <ng-container *ngIf="player.defense">
+              <td class="statCell">{{ player.defense.ip | number: '1.1-1'}}</td>
+              <td class="statCell">{{ player.defense.h }}</td>
+              <td class="statCell">{{ player.defense.r }}</td>
+              <td class="statCell">{{ player.defense.er }}</td>
+              <td class="statCell">{{ player.defense.bb }}</td>
+              <td class="statCell">{{ player.defense.so }}</td>
+              <td class="statCell">{{ player.defense.bf }}</td>
+              <td class="statCell">{{ player.defense["#P"] }}</td>
+              <td class="statCell">{{ player.defense.ts }}</td>
+              <td class="statCell">{{ player.defense.tb }}</td>
+              <td class="statCell">{{ player.defense.hbp }}</td>
+              <td class="statCell">{{ player.defense.era | number: '1.3-3' }}</td>
+              <td class="statCell">{{ player.defense["S%"] * 100 | number: '1.3-3' }}</td>
+              <td class="statCell">{{ player.defense.baa | number: '1.3-3' }}</td>
+              <td class="statCell">{{ player.defense.sb }}</td>
+              <td class="statCell">{{ player.defense.cs }}</td>
+            </ng-container>
+          </tr>
+        </ng-container>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td class="footerTitleCell" colspan="3">Totals</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.gp }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.pa }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.ab }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.h }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense["1B"] }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense["2B"] }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense["3B"] }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.hr }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.rbi }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.r }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.hbp }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.roe }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.fc }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.ci }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.bb }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.so }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.avg | number: '1.3-3' }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.obp | number: '1.3-3' }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.slg | number: '1.3-3' }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.offense.ops | number: '1.3-3' }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense.ip | number: '1.1-1'}}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense.h }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense.r }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense.er }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense.bb }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense.so }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense.bf }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense["#P"] }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense.ts }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense.tb }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense.hbp }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense.era | number: '1.3-3' }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense["S%"] * 100 | number: '1.3-3' }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense.baa | number: '1.3-3' }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense.sb }}</td>
+          <td class="statCell">{{ currentTeam.stats_data.stats.defense.cs }}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

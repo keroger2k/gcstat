@@ -2,5 +2,52 @@
 
 /* Provide sufficient contrast against white background */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+* {
+  box-sizing: border-box;
+}
+
+  *:focus {
+    outline: 1px solid grey;
+  }
+
+    *:focus:not(:focus-visible) {
+      outline: 0;
+      box-shadow: none;
+    }
+
+html, body {
+  background-color: #edf2fa;
+  margin: 0;
+  padding: 0;
+  color: #35373d;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+.page-wrapper {
+  color: black;
+}
+
+form {
+  width: 100%;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr;
+}
+
+.footer {
+  width: 100%;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+ 

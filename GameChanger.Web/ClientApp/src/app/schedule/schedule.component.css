@@ -1,3 +1,7 @@
+.teamSchedule{
+    padding:0 24px;
+    background-color:#fff;
+}
 
 .monthYear {
   font-size: 20px;
@@ -21,6 +25,7 @@
 .dayDate {
   justify-self: center;
   padding-top: 16px;
+  width:100%;
 }
 
 .dateText {

@@ -1,0 +1,624 @@
+
+.navBar {
+  background-color: #edf2fa;
+  width: 100%;
+  display: grid;
+  grid-template-rows: minmax(64px, max-content) 56px;
+  overflow-y: initial;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 80px;
+  z-index: calc(100 - 5);
+}
+.tabItems {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 8px;
+  padding-left: 4px;
+  z-index: 99;
+  width: 100%;
+  white-space: nowrap;
+}
+
+  .tabItems a {
+    text-decoration: none;
+  }
+
+.tabItems {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+  .tabItems::-webkit-scrollbar {
+    display: none;
+  }
+ 
+.withNavigation {
+  height: 176px;
+}
+
+.withoutNavigation {
+  height: 136px;
+}
+
+.teamInfo {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 16px;
+  padding: 32px 0 0 16px;
+  position: static;
+  margin-bottom: 20px;
+}
+
+.teamCustomAvatar div:last-child {
+  bottom: -6px;
+  right: -6px;
+}
+
+  .teamCustomAvatar div:last-child > svg {
+    width: 16px;
+    height: 16px;
+  }
+
+.teamText {
+  display: grid;
+  grid-template-rows: minmax(32px, max-content) 17px;
+  align-content: center;
+}
+
+.teamName {
+  grid-row: 1;
+  font-size: 30px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.teamSeason {
+  grid-row: 2;
+  font-size: 15px;
+}
+
+.status-accessory, .sport-accessory {
+  border-radius: 50%;
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  display: inline-flex;
+}
+
+
+.white-background {
+  background: #fff;
+}
+
+.grey-background {
+  background: linear-gradient(#cfdce8, #9db2c4);
+}
+
+.small-border, .xsmall-border {
+  border-style: solid;
+  border-color: #fff;
+  box-shadow: 0 3px 3px rgba(91, 113, 128, 0.2);
+}
+
+.small-border {
+  border-width: 4px;
+}
+
+.xsmall-border {
+  border-width: 2px;
+}
+
+.container {
+  box-shadow: 0 3px 3px rgba(91, 113, 128, 0.2);
+  border-radius: 50%;
+  position: relative;
+}
+
+  .container img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+.text {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.centered {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.small .sport-accessory {
+  bottom: -4px;
+  right: -4px;
+}
+
+.medium .sport-accessory {
+  bottom: -4px;
+  right: -4px;
+}
+
+.org-avatar {
+  border-radius: 50%;
+}
+
+.hideSportIcon {
+  display: none;
+}
+
+.text {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.sentence-case::first-letter {
+  text-transform: uppercase;
+}
+
+.bottom-margin {
+  margin-bottom: 0.5em;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.gc-blue {
+  color: #0070c8;
+}
+
+.gc-green {
+  color: #00d682;
+}
+
+.gc-indigo {
+  color: #021644;
+}
+
+.gc-light-indigo {
+  color: #021644;
+}
+
+.off-black {
+  color: #35373d;
+}
+
+.cool-grey-dark {
+  color: #5b7180;
+}
+
+.cool-grey {
+  color: #9db2c4;
+}
+
+.cool-grey-light {
+  color: #cfdce8;
+}
+
+.cool-grey-lighter {
+  color: #edf2fa;
+}
+
+.black {
+  color: black;
+}
+
+.white {
+  color: #fff;
+}
+
+.green {
+  color: #057e54;
+}
+
+.orange {
+  color: #bf5500;
+}
+
+.red {
+  color: #d12b41;
+}
+
+.dark-green {
+  color: #045a3c;
+}
+
+.dark-orange {
+  color: #944200;
+}
+
+.dark-red {
+  color: #7e101e;
+}
+
+.xxsmall {
+  font-size: 11px;
+  line-height: 14px;
+}
+
+.xsmall {
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.small {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.base {
+  font-size: 17px;
+  line-height: 24px;
+}
+
+.medium {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.large {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.xlarge {
+  font-size: 34px;
+  line-height: 48px;
+}
+
+.xxlarge {
+  font-size: 45px;
+  line-height: 52px;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.xbold {
+  font-weight: 800;
+}
+
+.unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.no-wrap {
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.inline-header {
+  display: inline-block;
+  margin: 0;
+}
+
+.block-header {
+  display: block;
+}
+
+.navBar {
+  background-color: #edf2fa;
+  width: 100%;
+  display: grid;
+  grid-template-rows: minmax(64px, max-content) 56px;
+  overflow-y: initial;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 80px;
+  z-index: calc(100 - 5);
+}
+
+.withNavigation {
+  height: 176px;
+}
+
+.withoutNavigation {
+  height: 136px;
+}
+
+.teamInfo {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 16px;
+  padding: 32px 0 0 16px;
+  position: static;
+  margin-bottom: 20px;
+}
+
+.teamAvatar {
+  grid-column: 1;
+  height: 72px;
+  width: 72px;
+  padding: 0px;
+}
+
+  .teamAvatar svg {
+    width: 48px;
+    height: 48px;
+  }
+
+.teamCustomAvatar div:last-child {
+  bottom: -6px;
+  right: -6px;
+}
+
+  .teamCustomAvatar div:last-child > svg {
+    width: 16px;
+    height: 16px;
+  }
+
+.teamText {
+  display: grid;
+  grid-template-rows: minmax(32px, max-content) 17px;
+  align-content: center;
+}
+
+.teamName {
+  grid-row: 1;
+  font-size: 30px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-transform: capitalize;
+}
+
+.teamSeason {
+  grid-row: 2;
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.square {
+  border-radius: 0px;
+}
+
+
+@media screen and (max-width: 767px) {
+  .navBar {
+    width: 100%;
+    grid-template-rows: minmax(100px, max-content) 56px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 66px;
+  }
+
+  .withNavigation {
+    height: 156px;
+  }
+
+  .withoutNavigation {
+    height: 96px;
+  }
+
+  .teamInfo {
+    grid-template-columns: 48px 1fr;
+    padding: 24px 16px;
+    column-gap: 16px;
+    position: static;
+    margin-bottom: 0px;
+    padding-bottom: 0;
+    min-height: 88px;
+  }
+
+  .teamSeason {
+    font-size: 15px;
+  }
+
+  .teamItems {
+    justify-self: start;
+    display: flex;
+    flex-direction: row;
+    padding-left: 4px;
+    padding-bottom: 8px;
+    z-index: 99;
+  }
+
+  .teamAvatar {
+    grid-column: 1;
+    height: 42px;
+    width: 42px;
+    padding: 0px;
+  }
+
+    .teamAvatar svg {
+      width: 28px;
+      height: 28px;
+    }
+
+  .teamName {
+    font-size: 22px;
+  }
+
+  .teamText {
+    grid-template-rows: minmax(28px, max-content) 17px;
+    align-content: baseline;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .withNavigation {
+    width: 100%;
+    grid-template-rows: minmax(70px, max-content) 56px;
+    height: 126px;
+    z-index: 15;
+  }
+
+  .teamName {
+    font-size: 18px;
+  }
+}
+
+
+
+.tabNavBarItem {
+  height: 40px;
+  display: flex;
+  border-radius: 4px;
+  font-size: 17px;
+  line-height: 1.41;
+  flex-direction: column;
+  padding: 8px 12px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+  .tabNavBarItem:hover {
+    background-color: rgba(53, 55, 61, 0.08);
+  }
+
+.activeTabNavBarItem:hover {
+  background: none;
+}
+
+.activeTabItemUnderline {
+  margin-top: 6px;
+  margin-left: 18px;
+  margin-right: 10px;
+  content: '';
+  border-bottom: 2px solid #0070c8;
+}
+
+.tabNavBarIcon {
+  display: relative;
+}
+
+.tabNavBarLabel {
+  padding: 0px;
+  text-transform: uppercase;
+  place-self: center;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .tabNavBarItem {
+    height: 40px;
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding: 8px 12px;
+    font-size: 20px;
+  }
+
+  .tabNavBarLabel {
+    padding-left: 0;
+  }
+
+  .tabNavBarIcon {
+    display: none;
+  }
+}
+
+@import '../../variables.scss';
+/* Size */
+/* Z-Indices */
+/* Z-Indices context: data table */
+/* Colors */
+.tabNavBarItem {
+  height: 40px;
+  display: flex;
+  border-radius: 4px;
+  font-size: 17px;
+  line-height: 1.41;
+  flex-direction: column;
+  padding: 8px 12px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+  .tabNavBarItem:hover {
+    background-color: rgba(53, 55, 61, 0.08);
+  }
+
+.activeTabNavBarItem:hover {
+  background: none;
+}
+
+.activeTabItemUnderline {
+  margin-top: 6px;
+  margin-left: 18px;
+  margin-right: 10px;
+  content: '';
+  border-bottom: 2px solid #0070c8;
+}
+
+.tabNavBarIcon {
+  display: relative;
+}
+
+.tabNavBarLabel {
+  padding: 0px;
+  text-transform: uppercase;
+  place-self: center;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .tabNavBarItem {
+    height: 40px;
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding: 8px 12px;
+    font-size: 20px;
+  }
+
+  .tabNavBarLabel {
+    padding-left: 0;
+  }
+
+  .tabNavBarIcon {
+    display: none;
+  }
+}
+ 

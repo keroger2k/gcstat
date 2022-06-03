@@ -8,16 +8,15 @@
           <p class="team_name">{{ team.name }}</p>
           <p class="team_season">{{ team.team_season.season }} {{ team.team_season.year }}</p>
           <p class="team_location">{{ team.location?.city }}, {{ team.location?.state }}</p>
-            <div *ngIf="team.staff.length > 0; else noAdmin">
+          <div *ngIf="team.staff.length > 0; else noAdmin">
 
-              <ng-container *ngFor="let person of team.staff">
-                <span class="staff_name">{{ person }} </span>
-              </ng-container>
-            </div>
-            <ng-template #noAdmin>
-              <span class="staff_name">No Admins Listed</span>
-            </ng-template>
-
+            <ng-container *ngFor="let person of team.staff">
+              <span class="staff_name">{{ person }} </span>
+            </ng-container>
+          </div>
+          <ng-template #noAdmin>
+            <span class="staff_name">No Admins Listed</span>
+          </ng-template>
         </mat-option>
       </ng-container>
     </mat-autocomplete>

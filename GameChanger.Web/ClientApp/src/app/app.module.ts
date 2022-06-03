@@ -6,26 +6,24 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { TeamNavBarComponent } from './team-nav-bar/team-nav-bar.component';
 import { HomeComponent } from './home/home.component';
-import { StatsComponent } from './team/stats/stats.component';
+import { StatsComponent } from './stats/stats.component';
 import { SearchComponent } from './search/search.component';
-import { TeamComponent } from './team/team.component';
-import { ScheduleComponent } from './team/schedule/schedule.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material.module';
-import { EventsComponent } from './team/events/events.component';
-import { SprayChartComponent } from './team/spray-chart/sparychart.component';
+import { SprayChartComponent } from './spray-chart/sparychart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
+    TeamNavBarComponent,
     HomeComponent,
     StatsComponent,
     SearchComponent,
-    TeamComponent,
     ScheduleComponent,
-    EventsComponent,
     SprayChartComponent
   ],
   imports: [
@@ -37,9 +35,9 @@ import { SprayChartComponent } from './team/spray-chart/sparychart.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'search', component: SearchComponent },
-      { path: 'team/:teamId', component: TeamComponent },
-      { path: 'team/:teamId/spray-chart', component: SprayChartComponent },
-      { path: 'team/:teamId/schedule/events/:eventId', component: EventsComponent }
+      { path: 'teams/:teamId/schedule', component: ScheduleComponent },
+      { path: 'teams/:teamId/season-stats', component: StatsComponent },
+      { path: 'teams/:teamId/spray-charts', component: SprayChartComponent },
     ]),
     BrowserAnimationsModule
   ],

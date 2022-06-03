@@ -1,31 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { Team } from '../models/teamStat';
+import { PostService } from '../services/post.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { PostService } from '../../services/post.service';
-import { TeamInfo } from '../../models/teamInfo';
+import { TeamInfo } from '../models/teamInfo';
+
+
 
 
 @Component({
-  selector: 'app-event',
-  templateUrl: './events.component.html',
-  styleUrls: ['./events.component.css']
+  selector: 'team-nav-bar',
+  templateUrl: './team-nav-bar.component.html',
+  styleUrls: ['./team-nav-bar.component.css']
 })
-export class EventsComponent implements OnInit {
 
+export class TeamNavBarComponent {
 
   routeSub: Subscription = new Subscription;
-  teamId: string | undefined;
-  eventId: string | undefined;
   teamInfo: TeamInfo | undefined;
   avatar: string | undefined;
-
+  teamId: string | undefined;
 
   constructor(private postService: PostService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.routeSub = this.route.params.subscribe(params => {
       this.teamId = params.teamId;
-      this.eventId = params.eventId
 
       this.postService.teamAvatar(params.teamId).subscribe(results => {
         this.avatar = "";
@@ -34,9 +34,9 @@ export class EventsComponent implements OnInit {
 
       this.postService.teamInfo(params.teamId).subscribe(results => {
         this.teamInfo = undefined;
-        this.teamInfo = results;
+        this.teamInfo = results; 
       })
-
+    
     });
   }
 }

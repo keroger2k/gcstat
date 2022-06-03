@@ -48,7 +48,7 @@ export class SearchComponent {
   }
 
   itemSelected(item: any) {
-    this.router.navigate(['/team/' + item.option.value]).then(() => {
+    this.router.navigate(['/teams/' + item.option.value + '/schedule']).then(() => {
       window.location.reload();
     });
   }

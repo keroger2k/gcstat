@@ -1,3 +1,36 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-column-gap: 1em;
+
+
+}
+
+@media only screen and (max-width: 1600px) {
+  .wrapper {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    grid-template-columns: 100%;
+  }
+}
+
+
+.spraychart {
+  width: 320px;
+  height:250px;
+  margin:0 auto;
+}
+
+#container {
+  width: 420px;
+  border: #978f8f 1px solid;
+  margin: 10px;
+  font-size:10px;
+}
 
 .gcTable thead tr, .gcTable.withOutline {
   border-bottom: 1px solid #ccc
