@@ -1,0 +1,186 @@
+
+.monthYear {
+  font-size: 20px;
+  margin-left: 2px;
+}
+
+.dayRow {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  border-bottom: 1px solid #cfdce8;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(207, 220, 232);
+}
+
+.dayRow:not(:last-of-type) {
+  border-bottom: 1px solid #cfdce8;
+}
+
+.dayDate {
+  justify-self: center;
+  padding-top: 16px;
+}
+
+.dateText {
+  font-size: 24px;
+}
+
+
+
+.event {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 123px;
+  grid-template-rows: minmax(40px, max-content) 40px;
+  min-height: 80px;
+  text-decoration: none;
+  color: black;
+}
+
+.event:hover {
+  background-color: rgba(53, 55, 61, 0.08);
+  width: calc(100% + 72px);
+  margin-left: -72px;
+  padding-left: 72px;
+}
+
+.event:not(:last-of-type) {
+  border-bottom: 1px solid #cfdce8;
+}
+
+.eventMonth {
+  border: 1px solid #cfdce8;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 37px;
+}
+
+.title {
+  grid-column: 1;
+  grid-row: 1;
+  padding-top: 16px;
+  font-size: 17px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.location {
+  grid-column: 1;
+  grid-row: 2;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.gameStatusLive {
+  width: 37px;
+  height: 20px;
+  text-align: center;
+  border-radius: 2px;
+  background-color: #d12b41;
+  font-size: 11px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.82;
+  letter-spacing: normal;
+  color: #fff;
+}
+
+.scoreOrTime {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  justify-self: right;
+  padding-right: 11px;
+}
+
+.scoreOrTimeText {
+  font-size: 17px;
+}
+
+.time {
+  color: #5b7180;
+}
+
+.monthHeader {
+  padding-bottom: 20px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: calc(var(--schedule-sticky-start, 256px));
+  padding-top: 32px;
+  margin-top: 12px;
+  background: #fff;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 10%, white 30%, rgba(255, 255, 255, 1) 76%, rgba(255, 255, 255, 0.447216) 100%);
+  z-index: 2;
+}
+
+.monthHeader:first-of-type {
+  background-color: #fff;
+}
+
+.monthHeader:first-child {
+  margin-top: -18px;
+}
+
+.chevron {
+  padding-left: 8px;
+  position: relative;
+  top: 2.25px;
+}
+
+@media screen and (max-width: 767px) {
+  .monthYear {
+    font-size: 17px;
+  }
+
+  .dayRow {
+    grid-template-columns: 52px 1fr;
+  }
+
+  .dateText {
+    font-size: 20px;
+  }
+
+  .event {
+    grid-template-rows: repeat(2, minmax(34px, max-content));
+    grid-template-columns: 1fr 104px;
+  }
+
+  .event:hover {
+    background-color: rgba(53, 55, 61, 0.08);
+    width: calc(100% + 52px);
+    margin-left: -52px;
+    padding-left: 52px;
+  }
+
+  .title {
+    font-size: 15px;
+    padding-top: 12px;
+  }
+
+  .scoreOrTimeText {
+    font-size: 15px;
+  }
+
+  .scoreOrTime {
+    padding-right: 3px;
+  }
+
+  .monthHeader {
+    position: -webkit-sticky;
+    position: sticky;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-top: 0;
+    top: calc(var(--schedule-sticky-start, 222px));
+    z-index: 2;
+  }
+
+  .monthHeader:first-child {
+    margin-top: -18px;
+  }
+}

@@ -8,6 +8,7 @@ import { TeamGameData } from '../../models/teamGameData';
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.css']
 })
+
 export class ScheduleComponent {
 
   wins: number = 0;

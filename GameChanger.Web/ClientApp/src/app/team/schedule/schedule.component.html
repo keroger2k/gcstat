@@ -1,19 +1,40 @@
 <ul>
   <ng-container *ngFor="let item of schedule">
     <ng-container *ngIf="getGameInfo(item)">
-      <li *ngIf="game">
-        <a href="/team/{{ teamId }}/schedule/events/{{ game.event_id }}">
-          <div *ngIf="game.game_data; then thenBlock else elseBlock"></div>
-          <ng-template #thenBlock>
-            <span style="padding:0px 5px 0px 5px; font-weight:bold;">{{  getResult(game.game_data.team_score, game.game_data.opponent_score) }}</span>
-            <span style="padding:0px 5px 0px 5px;">{{ game?.game_data?.opponent_score }} - {{ game?.game_data?.team_score }}</span>
-            <span style="padding:0px 5px 0px 5px;">{{ item.event.title }}</span>
-          </ng-template>
-          <ng-template #elseBlock>
-            <span style="padding:0px 5px 0px 5px;">{{ item.event.title }}</span>
-          </ng-template>
-        </a>
-      </li>
+      <a *ngIf="game" href="/team/{{ teamId }}/schedule/events/{{ game.event_id }}">
+        <div *ngIf="game.game_data; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+          <div class="dayRow">
+            <div class="dayDate">
+              <div class="text center cool-grey-dark small regular">{{ item.event.start.datetime | date:'fullDate' }}</div>
+            </div>
+            <div>
+              <a class="event" href="/team/{{ teamId }}/schedule/{{ game.event_id }}">
+                <div class="title">
+                  <div class="text left off-black base semibold">{{ item.pregame_data.home_away === "away" ?  '@' : 'vs' }} {{item.event.title}}</div>
+                </div>
+                <div class="text left cool-grey-dark small regular location">{{ item.event.location.name  }}</div>
+                <div class="scoreOrTime">
+                  <span class="text left off-black base semibold EventScore__win scoreOrTimeText">{{  getResult(game.game_data.team_score, game.game_data.opponent_score) }} {{ game?.game_data?.team_score }} - {{ game?.game_data?.opponent_score }}</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template #elseBlock>
+          <div class="dayRow">
+            <div class="dayDate">
+              <div class="text center cool-grey-dark small regular">{{ item.event.start.datetime | date:'fullDate' }}</div>
+            </div>
+            <div>
+              <div class="title">
+                <div class="text left off-black base semibold">{{ item.pregame_data.home_away === "away" ?  '@' : 'vs' }} {{item.event.title}}</div>
+              </div>
+              <div class="text left cool-grey-dark small regular location">{{ item.event.location.name  }}</div>
+            </div>
+          </div>
+        </ng-template>
+      </a>
     </ng-container>
   </ng-container>
 </ul>
