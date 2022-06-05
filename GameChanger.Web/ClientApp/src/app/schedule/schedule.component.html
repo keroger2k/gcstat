@@ -14,7 +14,7 @@
               <div class="title">
                 <div class="text left off-black base semibold">{{ item.pregame_data.home_away === "away" ?  '@' : 'vs' }} {{item.event.title}}</div>
               </div>
-              <div class="text left cool-grey-dark small regular location">{{ item.event.location.name  }}</div>
+              <div *ngIf="item.event.location" class="text left cool-grey-dark small regular location">{{ item.event.location.name  }}</div>
               <div class="scoreOrTime">
                 <span class="text left off-black base semibold EventScore__win scoreOrTimeText">{{  getResult(game.game_data.team_score, game.game_data.opponent_score) }} {{ game?.game_data?.team_score }} - {{ game?.game_data?.opponent_score }}</span>
               </div>
