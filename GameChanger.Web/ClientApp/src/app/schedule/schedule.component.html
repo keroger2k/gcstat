@@ -10,7 +10,7 @@
               <div class="text center cool-grey-dark small regular">{{ item.event.start.datetime | date:'fullDate' }}</div>
             </div>
             <div>
-              <!--<a class="event" href="/team/{{ teamId }}/schedule/{{ game.event_id }}">-->
+              <a class="event" href="/team/{{ teamId }}/schedule/{{ game.event_id }}">
               <div class="title">
                 <div class="text left off-black base semibold">{{ item.pregame_data.home_away === "away" ?  '@' : 'vs' }} {{item.event.title}}</div>
               </div>
@@ -18,7 +18,7 @@
               <div class="scoreOrTime">
                 <span class="text left off-black base semibold EventScore__win scoreOrTimeText">{{  getResult(game.game_data.team_score, game.game_data.opponent_score) }} {{ game?.game_data?.team_score }} - {{ game?.game_data?.opponent_score }}</span>
               </div>
-              <!--</a>-->
+              </a>
             </div>
           </div>
         </ng-template>

@@ -14,6 +14,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material.module';
 import { SprayChartComponent } from './spray-chart/sparychart.component';
+import { TeamInfoComponent } from './team-info/team-info.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SprayChartComponent } from './spray-chart/sparychart.component';
     StatsComponent,
     SearchComponent,
     ScheduleComponent,
-    SprayChartComponent
+    SprayChartComponent,
+    TeamInfoComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,6 +38,7 @@ import { SprayChartComponent } from './spray-chart/sparychart.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'search', component: SearchComponent },
       { path: 'teams/:teamId/schedule', component: ScheduleComponent },
+      { path: 'teams/:teamId/teamInfo', component: TeamInfoComponent },
       { path: 'teams/:teamId/season-stats', component: StatsComponent },
       { path: 'teams/:teamId/spray-charts', component: SprayChartComponent },
     ]),

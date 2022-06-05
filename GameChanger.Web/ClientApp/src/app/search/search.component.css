@@ -6,8 +6,26 @@
   width: 500px;
 }
 
+.buscador {
+  color: white !important;
+}
 
-.mat-option.mat-focus-indicator.ng-star-inserted {
+:host ::ng-deep .mat-form-field-underline {
+  background-color: white !important;
+  color: white !important;
+}
+
+:host ::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple {
+  background-color: white !important;
+  color: white !important;
+}
+
+::ng-deep input.mat-input-element {
+  color: white;
+  color: white !important;
+}
+
+  .mat-option.mat-focus-indicator.ng-star-inserted {
   height: 125px;
   line-height: normal;
   margin: 0px;

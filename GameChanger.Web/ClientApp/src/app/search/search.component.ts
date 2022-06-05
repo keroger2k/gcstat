@@ -48,9 +48,15 @@ export class SearchComponent {
   }
 
   itemSelected(item: any) {
-    this.router.navigate(['/teams/' + item.option.value + '/schedule']).then(() => {
-      window.location.reload();
-    });
+    if (item.option.value == "88daa9da-99f7-473e-995c-dcc465759cf4") {
+      this.router.navigate(['/']).then(() => {
+        window.location.reload();
+      });
+    } else {
+      this.router.navigate(['/teams/' + item.option.value + '/schedule']).then(() => {
+        window.location.reload();
+      });
+    }
   }
 
 }
