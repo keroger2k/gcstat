@@ -11,7 +11,7 @@ import { TeamInfo } from '../models/teamInfo';
 @Component({
   selector: 'team-nav-bar',
   templateUrl: './team-nav-bar.component.html',
-  styleUrls: ['./team-nav-bar.component.css']
+  styleUrls: ['./team-nav-bar.component.scss']
 })
 
 export class TeamNavBarComponent {

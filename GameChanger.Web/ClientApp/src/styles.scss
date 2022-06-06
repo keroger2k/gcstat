@@ -1,21 +1,25 @@
+@import './variables.scss';
+
 * {
   box-sizing: border-box;
 }
 
-  *:focus {
-    outline: 1px solid grey;
-  }
+// prevent safari's focus ring highlight
+*:focus {
+  outline: 1px solid grey;
+}
 
-    *:focus:not(:focus-visible) {
-      outline: 0;
-      box-shadow: none;
-    }
+*:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: none;
+}
 
-html, body {
-  background-color: #edf2fa;
+html,
+body {
+  background-color: $cool-grey-lighter;
   margin: 0;
   padding: 0;
-  color: #617dd3;
+  color: $off-black;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   height: 100%;
@@ -23,7 +27,7 @@ html, body {
 }
 
 body {
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch; // mobile Safari
 }
 
 .page-wrapper {
@@ -45,4 +49,3 @@ form {
   padding-right: 24px;
   padding-left: 24px;
 }
- 

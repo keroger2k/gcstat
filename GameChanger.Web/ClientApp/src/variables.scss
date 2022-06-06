@@ -1,0 +1,143 @@
+/* Size */
+$button-border-width: 1px;
+
+$circular-border-radius-percentage: 50%;
+$x-small-spacing: 8px;
+$small-spacing: 16px;
+$medium-spacing: 24px;
+$large-spacing: 32px;
+$x-large-spacing: 48px;
+$xx-large-spacing: 64px;
+$xxx-large-spacing: 72px;
+$standard-spacing: $x-small-spacing;
+
+//Text Button Icon Sizes
+$large-text-button-icon-size: 48px;
+$medium-text-button-icon-size: 32px;
+$small-text-button-icon-size: 24px;
+$xsmall-text-button-icon-size: 16px;
+
+/// Font
+$xx-small-font-size: 11px;
+$x-small-font-size: 13px;
+$small-font-size: 15px;
+$base-font-size: 17px;
+$medium-font-size: 20px;
+$large-font-size: 24px;
+$xlarge-font-size: 34px;
+$xxlarge-font-size: 45px;
+
+$xx-small-line-height: 14px;
+$x-small-line-height: 16px;
+$small-line-height: 20px;
+$base-line-height: 24px;
+$medium-line-height: 28px;
+$large-line-height: 32px;
+$xlarge-line-height: 48px;
+$xxlarge-line-height: 52px;
+
+$input-height: 44px;
+
+/* Z-Indices */
+$modal-z-index: 1000;
+$modal-header-footer-zindex: 1001;
+$sticky-z-index: 100;
+$nav-z-index: $sticky-z-index;
+/* Z-Indices context: data table */
+$data-table-header-z-index: 1;
+$data-table-sticky-header-z-index: 2;
+$game-stats-remove-player-button-z-index: $data-table-sticky-header-z-index + 1;
+
+/* Colors */
+
+/// Primary
+$gc-blue: #0070c8;
+
+/// Brand
+$gc-green: #00d682;
+$gc-indigo: #021644;
+$gc-light-indigo: #021644;
+$dsg-green: #006554;
+
+/// Neutral
+$off-black: #35373d;
+$cool-grey-dark: #5b7180;
+$cool-grey: #9db2c4;
+$cool-grey-light: #cfdce8;
+$cool-grey-lighter: #edf2fa;
+$cool-grey-lightest: #f9f9f9;
+
+/// Utility
+$black: black;
+$white: #ffffff;
+$green: #057e54;
+$orange: #bf5500;
+$red: #d12b41;
+$dark-green: #045a3c;
+$dark-orange: #944200;
+$dark-red: #7e101e;
+
+$overlay-alpha-percentage: 30%;
+$disabled-alpha: 0.4;
+$shadow-alpha: 0.2;
+$box-shadow: 0 3px 3px rgba($cool-grey-dark, $shadow-alpha);
+$box-shadow-large: 0 6px 6px rgba($black, $shadow-alpha);
+$focused-background: rgba(53, 55, 61, 0.08);
+
+$xl-breakpoint-max: 100000px; // For consistency in loops
+$xl-breakpoint-min: 1200px;
+
+$lg-breakpoint-min: 992px;
+$lg-breakpoint-max: $xl-breakpoint-min - 1;
+
+$md-breakpoint-min: 768px;
+$md-breakpoint-max: $lg-breakpoint-min - 1;
+
+$sm-breakpoint-min: 576px;
+$sm-breakpoint-max: $md-breakpoint-min - 1;
+
+$xxs-breakpoint-max: 320px;
+
+$xs-breakpoint-min: 0; // For consistency in loops
+$xs-breakpoint-max: $sm-breakpoint-min - 1;
+
+$team-navbar-width: 313px;
+$team-navbar-height: 176px;
+$sm-team-navbar-height: 156px;
+$xxs-team-navbar-height: 126px;
+
+$team-header-height: 136px;
+$sm-team-header-height: 96px;
+
+$event-navbar-height: 56px;
+
+$navbar-height: 80px;
+$sm-navbar-height: 66px;
+
+$sm-title-row-height: $large-line-height + $medium-spacing + 12px; // title.scss
+
+// top values for position:sticky elements
+$top-map: ( 'after-team-navbar': $navbar-height + $team-navbar-height, 'sm-after-team-navbar': $sm-navbar-height + $sm-team-navbar-height, 'after-team-header': $navbar-height + $team-header-height, 'sm-after-team-header': $sm-navbar-height + $sm-team-header-height, 'start-of-page': 0, );
+
+@mixin sticky($name) {
+  position: -webkit-sticky; // Safari
+  position: sticky;
+  top: map-get($top-map, #{$name});
+
+  @media screen and (max-width: $sm-breakpoint-max) {
+    top: map-get($top-map, sm-#{$name});
+    // sass is smart enough to not include this media query if sm-#{$name} does not exist in the top-map;
+  }
+}
+
+@mixin ellipsis($lines: 1) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: word-break;
+
+  @if ($lines > 1) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+  }
+}

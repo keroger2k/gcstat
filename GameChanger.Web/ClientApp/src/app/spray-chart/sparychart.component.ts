@@ -10,7 +10,7 @@ import { TeamInfo } from '../models/teamInfo';
 @Component({
   selector: 'app-spray-chart',
   templateUrl: './spraychart.component.html',
-  styleUrls: ['./spraychart.component.css']
+  styleUrls: ['./spraychart.component.scss']
 })
 export class SprayChartComponent implements OnInit {
 

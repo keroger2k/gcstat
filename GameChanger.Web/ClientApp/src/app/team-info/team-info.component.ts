@@ -10,7 +10,7 @@ import { Player } from '../models/player';
 @Component({
   selector: 'team-info',
   templateUrl: './team-info.component.html',
-  styleUrls: ['./team-info.component.css']
+  styleUrls: ['./team-info.component.scss']
 })
 
 export class TeamInfoComponent {

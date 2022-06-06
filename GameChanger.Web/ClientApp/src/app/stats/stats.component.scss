@@ -333,13 +333,6 @@ table.linescore .negativeScore {
 }
 
 
-@import '~ag-grid-community/src/styles/ag-grid';
-@import '~ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin';
-@import '../../variables.scss';
-/* Size */
-/* Z-Indices */
-/* Z-Indices context: data table */
-/* Colors */
 .ag-root, .ag-root-wrapper {
   overflow: visible !important;
 }
