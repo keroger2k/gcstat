@@ -1,21 +1,25 @@
 <team-nav-bar></team-nav-bar>
-<div class="list-row-container">
-  <ng-container *ngFor="let item of teamPlayers">
-
-    <a class="container list-row" href="/teams/{{item.team_id}}/players/{{item.id}}">
-      <div class="avatar-one-row">
-        <div class="container grey-background small">
-          <div class="centered">
-            <div class="text">
-              <span class="text left white small bold">{{ item.first_name.substring(0, 2) }}</span>
+<div class="mainContentContainer">
+  <div class="grid centered teamInfoPageContainer">
+    <div class="row vertical-align row" role="presentation">
+      <h1 class="text left off-black base xbold Title__text inline-header">Team</h1>
+    </div>
+    <div class="list-row-container">
+      <ng-container *ngFor="let item of teamPlayers">
+        <a class="ListRow__container ListRow__list-row" href="/teams/{{item.team_id}}/players/{{item.id}}">
+          <div class="avatar-one-row">
+            <div class="Avatar__container Avatar__grey-background Avatar__small">
+              <div class="Avatar__centered">
+                <div class="Avatar__text">
+                  <span class="Text__text Text__left Text__white Text__small Text__bold">{{ item.first_name.substring(0, 2) }}</span>
+                </div>
+              </div>
+              <div class="status-accessory"></div>
             </div>
           </div>
-          <div class="status-accessory"></div>
-        </div>
-      </div>
-      <div class="content-one-row">
-        {{item.first_name}} {{ item.last_name }}, #{{item.number}}
-      </div>
-    </a>
-  </ng-container>
+          <div class="ListRow__content-one-row">{{item.first_name}} {{ item.last_name }}, #{{item.number}}</div>
+        </a>
+      </ng-container>
+    </div>
+  </div>
 </div>

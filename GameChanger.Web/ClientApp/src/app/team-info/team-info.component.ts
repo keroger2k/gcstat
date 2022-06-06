@@ -28,7 +28,6 @@ export class TeamInfoComponent {
 
       this.postService.teamPlayers(params.teamId).subscribe(results => {
         this.teamPlayers = results;
-        console.log(results);
       });
 
     });

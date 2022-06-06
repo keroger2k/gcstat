@@ -29,18 +29,15 @@ export class ScheduleComponent {
       this.teamId = params.teamId;
 
       this.postService.teamInfo(params.teamId).subscribe(results => {
-        this.teamInfo = undefined;
         this.teamInfo = results;
       });
 
       this.postService.teamScheduledEvent(params.teamId).subscribe(results => {
-        this.schedule = [];
         this.schedule = results.filter(e => e.event.event_type === "game");
       });
 
 
       this.postService.teamGameData(params.teamId).subscribe(results => {
-        this.games = [];
         this.games = results;
       });
 

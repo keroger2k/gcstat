@@ -1,12 +1,14 @@
+@import '../../variables.scss';
+
 .nav-bar {
-  position: relative;
+  position: relative; // IE Fallback
   top: 0;
-  z-index: 100;
+  z-index: $nav-z-index;
   display: flex;
-  height: 72px;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+  height: $xxx-large-spacing;
+  box-shadow: $box-shadow-large;
   align-items: center;
-  background-color: #617dd3;
+  background-color: $light-blue;
 }
 
 .grid {
@@ -26,22 +28,22 @@
 .logoHolder {
   display: flex;
   align-items: center;
-}
 
-  .logoHolder > * {
+  & > * {
     margin-right: 8px;
   }
+}
 
 .backButton {
   background-color: inherit;
   justify-content: start;
-}
 
-  .backButton:hover {
+  &:hover {
     background-color: inherit;
   }
+}
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: $xxs-breakpoint-max) {
   .logo--stacked {
     height: 28px;
   }
@@ -50,22 +52,20 @@
 .nav-bar-container {
   display: grid;
   grid-template-columns: 225px 1fr max-content;
-  padding: 12px 24px 12px 16px;
+  padding: 12px $medium-spacing 12px $small-spacing;
   width: 100%;
-  background-color: #617dd3;
-  height: 80px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+  background-color: $light-blue;
+  height: $navbar-height;
+  @include sticky('start-of-page');
+  z-index: $sticky-z-index;
 
-  .nav-bar-container a, .nav-bar-container a:active {
+  a,
+  a:active {
     text-decoration: none;
     display: flex;
   }
 
-  .nav-bar-container:after {
+  &:after {
     content: '';
     display: block;
     height: 10px;
@@ -76,144 +76,18 @@
     background: linear-gradient(to bottom, rgba(159, 179, 192, 0.3), rgba(102, 124, 140, 0));
     z-index: 5;
   }
+}
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: $sm-breakpoint-max) {
   .nav-bar-container {
     grid-template-rows: 56px max-content 1fr;
-    height: 66px;
-    padding: 5px 24px 12px 16px;
+    height: $sm-navbar-height;
+    padding: 5px $medium-spacing 12px $small-spacing;
   }
 
   .display-menu {
     height: 100% !important;
     position: fixed;
-    z-index: calc(100 + 5);
-  }
-}
-
-.nav-menu-container {
-  grid-column: 3;
-  display: grid;
-  grid-column-gap: 1vw;
-  grid-template-columns: repeat(3, max-content);
-  align-items: center;
-  align-content: center;
-  height: 100%;
-  color:#fff;
-}
-
-  .nav-menu-container a, .nav-menu-container a:active {
-    text-decoration: none;
-  }
-
-  .nav-menu-container > *:not(button) {
-    border-radius: 4px;
-    padding: 4px 8px 4px 8px;
-  }
-
-    .nav-menu-container > *:not(button):hover {
-      background-color: rgba(53, 55, 61, 0.08);
-    }
-
-    .nav-menu-container > *:not(button):last-of-type {
-      padding: 0px 3px;
-    }
-
-.avatar {
-  margin-top: 5px;
-  margin-right: 10px;
-  min-width: 32px;
-}
-
-.signoutContainer {
-  display: flex;
-  margin-right: -18px;
-}
-
-.horizontal-rule {
-  display: none;
-}
-
-.email {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 185px;
-}
-
-@media screen and (max-width: 767px) {
-  .dropdown {
-    grid-column: 3;
-    display: flex !important;
-    align-items: center;
-  }
-
-  .nav-menu-container {
-    grid-column: 1;
-    grid-row: 2;
-    grid-template-rows: repeat(2, 64px) 49px 80px;
-    grid-template-columns: 1fr;
-    z-index: calc(100 + 5);
-    background-color: #35373d;
-  }
-
-  .horizontal-rule {
-    border-bottom: 1px solid #cfdce8;
-    min-width: 100vw;
-    margin-left: -24px;
-    display: block;
-  }
-
-  .hide {
-    display: none;
-  }
-
-  .teams, .request-help, .sign-out {
-    font-size: 24px !important;
-  }
-
-    .teams svg, .request-help svg {
-      margin-right: 18px;
-    }
-}
-
-.teams svg, .request-help svg {
-  margin-right: 8px;
-  vertical-align: middle;
-  margin-top: 4px;
-}
-
-.teams {
-  height: 100%;
-  width: 92px;
-  align-items: center;
-  font-size: 17px;
-}
-
-.request-help {
-  align-items: center;
-  font-size: 17px;
-}
-
-.sign-out {
-  font-size: 15px;
-}
-
-.dropdown {
-  grid-column: 3;
-  display: none;
-}
-
-@media screen and (max-width: 767px) {
-  .email {
-    max-width: 280px;
-    margin-top: 2px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .email {
-    max-width: 240px;
-    margin-top: 2px;
+    z-index: calc(#{$sticky-z-index} + 5);
   }
 }
