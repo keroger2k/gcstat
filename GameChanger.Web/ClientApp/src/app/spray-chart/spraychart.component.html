@@ -75,7 +75,7 @@
               <ng-template #thenBlock>
               </ng-template>
               <ng-template #elseBlock>
-                <circle [attr.fill]="chart.attributes.playResult.includes('batter_out') ?  '#B90018' : '#00D682'"
+                <circle [attr.fill]="chart.attributes.playResult.includes('batter_out') || chart.attributes.playResult.includes('error') || chart.attributes.playResult.includes('sacrifice_fly') || chart.attributes.playResult.includes('sacrifice_bunt')  ?  '#B90018' : '#00D682'"
                         [attr.cx]="convertCoordinates(chart.attributes.defenders[0].location).x"
                         [attr.cy]="convertCoordinates(chart.attributes.defenders[0].location).y"
                         r="4"

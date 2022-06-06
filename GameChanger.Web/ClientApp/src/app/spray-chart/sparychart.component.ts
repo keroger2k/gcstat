@@ -30,6 +30,7 @@ export class SprayChartComponent implements OnInit {
 
       this.postService.teamSprayData(params.teamId).subscribe(results => {
         this.playerSprayInfo = results;
+        console.log(results);
       });
 
       this.postService.teamInfo(params.teamId).subscribe(results => {
