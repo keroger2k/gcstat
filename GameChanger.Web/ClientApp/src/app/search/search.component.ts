@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../services/post.service';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { debounceTime, tap, switchMap, finalize } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 
 export class SearchComponent {
 
-  searchTeamsControl = new FormControl();
+  searchTeamsControl = new UntypedFormControl();
   filteredTeams: any;
   isLoading = false;
   errorMsg: string | undefined;

@@ -134,5 +134,7 @@
       }
     }
   },
-  "defaultProject": "GameChanger.Web"
+  "cli": {
+    "analytics": false
+  }
 }
