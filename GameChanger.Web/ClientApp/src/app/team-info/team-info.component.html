@@ -1,16 +1,21 @@
 <team-nav-bar></team-nav-bar>
 <div class="list-row-container">
+  <ng-container *ngFor="let item of teamPlayers">
 
-  <a class="container list-row" href="/teams/:teadId/players/:playerId">
-    <div class="avatar-one-row">
-      <div class="container grey-background small">
-        <div class="centered">
-          <div class="text"><span class="text left white small bold">Ta</span></div>
+    <a class="container list-row" href="/teams/{{item.team_id}}/players/{{item.id}}">
+      <div class="avatar-one-row">
+        <div class="container grey-background small">
+          <div class="centered">
+            <div class="text">
+              <span class="text left white small bold">{{ item.first_name.substring(0, 2) }}</span>
+            </div>
+          </div>
+          <div class="status-accessory"></div>
         </div>
-        <div class="status-accessory"></div>
       </div>
-    </div>
-    <div class="content-one-row">Tanner, #2</div>
-  </a>
-
+      <div class="content-one-row">
+        {{item.first_name}} {{ item.last_name }}, #{{item.number}}
+      </div>
+    </a>
+  </ng-container>
 </div>

@@ -15,16 +15,13 @@ import { TeamInfo } from '../models/teamInfo';
 
 export class ScheduleComponent {
 
-  wins: number = 0;
-  losses: number = 0;
-  ties: number = 0;
   game: TeamGameData | undefined;
+  games: Array<TeamGameData> | undefined;
   teamId: string | undefined;
   routeSub: Subscription = new Subscription;
   teamInfo: TeamInfo | undefined;
+  schedule: Array<TeamScheduledEvent> | undefined;
 
-  @Input() schedule: any;
-  @Input() games: any;
   constructor(private postService: PostService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -34,18 +31,18 @@ export class ScheduleComponent {
       this.postService.teamInfo(params.teamId).subscribe(results => {
         this.teamInfo = undefined;
         this.teamInfo = results;
-      })
+      });
 
       this.postService.teamScheduledEvent(params.teamId).subscribe(results => {
         this.schedule = [];
         this.schedule = results.filter(e => e.event.event_type === "game");
-      })
+      });
 
 
       this.postService.teamGameData(params.teamId).subscribe(results => {
         this.games = [];
         this.games = results;
-      })
+      });
 
     });
   }
@@ -67,7 +64,6 @@ export class ScheduleComponent {
     var local = this.games?.find((c: { event_id: string; }) => c.event_id == item.event.id);
     this.teamId = item.event.team_id;
     this.game = local;
-    console.log(item);
     return local;
   }
 }

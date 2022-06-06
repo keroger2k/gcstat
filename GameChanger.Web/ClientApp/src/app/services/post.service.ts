@@ -4,6 +4,7 @@ import { Team, Root } from '../models/teamStat'
 import { Avatar } from '../models/avatar'
 import { TeamGameData } from '../models/teamGameData'
 import { TeamInfo } from '../models/teamInfo'
+import { Player } from '../models/player'
 import { PlayerSprayRoot } from '../models/spraychart'
 import { TeamScheduledEvent } from '../models/teamScheduledEvent'
 import { map } from 'rxjs/operators';
@@ -44,6 +45,10 @@ export class PostService {
 
   teamInfo(id: string) {
     return this.http.get<TeamInfo>(this.TEAM_ENDPOINT + id)
+  }
+
+  teamPlayers(id: string) {
+    return this.http.get<Array<Player>>(this.TEAM_ENDPOINT + id + '/players')
   }
 
 }

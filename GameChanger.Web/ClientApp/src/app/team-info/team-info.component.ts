@@ -4,7 +4,7 @@ import { TeamGameData } from '../models/teamGameData';
 import { PostService } from '../services/post.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { TeamInfo } from '../models/teamInfo';
+import { Player } from '../models/player';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class TeamInfoComponent {
   game: TeamGameData | undefined;
   teamId: string | undefined;
   routeSub: Subscription = new Subscription;
-  teamInfo: TeamInfo | undefined;
+  teamPlayers: Array<Player> | undefined;
 
   constructor(private postService: PostService, private route: ActivatedRoute) { }
 
@@ -26,10 +26,10 @@ export class TeamInfoComponent {
     this.routeSub = this.route.params.subscribe(params => {
       this.teamId = params.teamId;
 
-      this.postService.teamInfo(params.teamId).subscribe(results => {
-        this.teamInfo = undefined;
-        this.teamInfo = results;
-      })
+      this.postService.teamPlayers(params.teamId).subscribe(results => {
+        this.teamPlayers = results;
+        console.log(results);
+      });
 
     });
   }
