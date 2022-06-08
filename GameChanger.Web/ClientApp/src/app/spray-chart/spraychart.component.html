@@ -75,13 +75,15 @@
               <ng-template #thenBlock>
               </ng-template>
               <ng-template #elseBlock>
-                <circle [attr.fill]="chart.attributes.playResult.includes('batter_out') || chart.attributes.playResult.includes('error') || chart.attributes.playResult.includes('sacrifice_fly') || chart.attributes.playResult.includes('sacrifice_bunt')  ?  '#B90018' : '#00D682'"
-                        [attr.cx]="convertCoordinates(chart.attributes.defenders[0].location).x"
-                        [attr.cy]="convertCoordinates(chart.attributes.defenders[0].location).y"
-                        r="4"
-                        stroke="chart.attributes.playResult.includes('batter_out') ?  '#61000D' : '#009B4D'"
-                        stroke-width="1.143">
-                </circle>
+                <ng-container *ngIf="chart.attributes.defenders[0]">
+                  <circle [attr.fill]="chart.attributes.playResult.includes('batter_out') || chart.attributes.playResult.includes('error') || chart.attributes.playResult.includes('sacrifice_fly') || chart.attributes.playResult.includes('sacrifice_bunt')  ?  '#B90018' : '#00D682'"
+                          [attr.cx]="convertCoordinates(chart.attributes.defenders[0].location).x"
+                          [attr.cy]="convertCoordinates(chart.attributes.defenders[0].location).y"
+                          r="4"
+                          stroke="chart.attributes.playResult.includes('batter_out') ?  '#61000D' : '#009B4D'"
+                          stroke-width="1.143">
+                  </circle>
+                </ng-container>
               </ng-template>
             </ng-container>
             000
@@ -89,5 +91,5 @@
         </figure>
       </div>
     </div>
-    </ng-container>
+  </ng-container>
 </div>
