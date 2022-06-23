@@ -38,9 +38,11 @@ import { TeamInfoComponent } from './team-info/team-info.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'search', component: SearchComponent },
       { path: 'teams/:teamId/schedule', component: ScheduleComponent },
+      //{ path: 'teams/:teamId/schedulde/:eventId', component: EventComponent },
       { path: 'teams/:teamId/teamInfo', component: TeamInfoComponent },
       { path: 'teams/:teamId/season-stats', component: StatsComponent },
       { path: 'teams/:teamId/spray-charts', component: SprayChartComponent },
+
     ]),
     BrowserAnimationsModule
   ],

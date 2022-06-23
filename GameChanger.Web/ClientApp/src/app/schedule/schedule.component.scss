@@ -32,7 +32,11 @@
   font-size: 24px;
 }
 
-
+.ScheduleList__chevron {
+  padding-left: 8px;
+  position: relative;
+  top: 2.25px;
+}
 
 .event {
   width: 100%;
@@ -53,6 +57,18 @@
 
 .event:not(:last-of-type) {
   border-bottom: 1px solid #cfdce8;
+}
+
+.ScheduleList__scoreOrTimeText {
+  font-size: 17px;
+}
+
+.EventScore__win {
+  color: #057e54;
+}
+
+.Text__semibold {
+  font-weight: 600;
 }
 
 .eventMonth {

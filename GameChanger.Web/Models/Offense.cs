@@ -43,7 +43,7 @@ namespace GameChanger.Core
         public double AVG { get; set; }
 
         [JsonPropertyName("CB%")]
-        public int CB { get; set; }
+        public double CB { get; set; }
 
         [JsonPropertyName("CH%")]
         public double CH { get; set; }
